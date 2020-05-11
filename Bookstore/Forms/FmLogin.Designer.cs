@@ -193,6 +193,7 @@ namespace Bookstore.Forms
 			// 
 			// pbIconEmail
 			// 
+			this.pbIconEmail.BackColor = System.Drawing.Color.DarkGray;
 			this.pbIconEmail.Image = ((System.Drawing.Image)(resources.GetObject("pbIconEmail.Image")));
 			this.pbIconEmail.Location = new System.Drawing.Point(330, 143);
 			this.pbIconEmail.Name = "pbIconEmail";
@@ -203,6 +204,7 @@ namespace Bookstore.Forms
 			// 
 			// pbIconPassword
 			// 
+			this.pbIconPassword.BackColor = System.Drawing.Color.DarkGray;
 			this.pbIconPassword.Image = ((System.Drawing.Image)(resources.GetObject("pbIconPassword.Image")));
 			this.pbIconPassword.Location = new System.Drawing.Point(330, 203);
 			this.pbIconPassword.Name = "pbIconPassword";
