@@ -19,8 +19,8 @@ namespace Bookstore.Forms
 		private System.Windows.Forms.PictureBox pbEmail;
 		private System.Windows.Forms.PictureBox pbPassword;
 		private System.Windows.Forms.Label label1;
-		private System.Windows.Forms.TextBox textBox1;
-		private System.Windows.Forms.TextBox textBox2;
+		private System.Windows.Forms.TextBox txtEmail;
+		private System.Windows.Forms.TextBox txtPassword;
 		private System.Windows.Forms.CheckBox cbLembrarSenha;
 		private System.Windows.Forms.PictureBox pictureBox5;
 		private System.Windows.Forms.Label label2;
@@ -56,8 +56,8 @@ namespace Bookstore.Forms
 			this.pbEmail = new System.Windows.Forms.PictureBox();
 			this.pbPassword = new System.Windows.Forms.PictureBox();
 			this.label1 = new System.Windows.Forms.Label();
-			this.textBox1 = new System.Windows.Forms.TextBox();
-			this.textBox2 = new System.Windows.Forms.TextBox();
+			this.txtEmail = new System.Windows.Forms.TextBox();
+			this.txtPassword = new System.Windows.Forms.TextBox();
 			this.cbLembrarSenha = new System.Windows.Forms.CheckBox();
 			this.pictureBox5 = new System.Windows.Forms.PictureBox();
 			this.label2 = new System.Windows.Forms.Label();
@@ -125,29 +125,29 @@ namespace Bookstore.Forms
 			this.label1.TabIndex = 4;
 			this.label1.Text = "Entre e gerencie a livraria";
 			// 
-			// textBox1
+			// txtEmail
 			// 
-			this.textBox1.BackColor = System.Drawing.Color.DarkGray;
-			this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-			this.textBox1.ForeColor = System.Drawing.Color.WhiteSmoke;
-			this.textBox1.Location = new System.Drawing.Point(369, 146);
-			this.textBox1.Multiline = true;
-			this.textBox1.Name = "textBox1";
-			this.textBox1.Size = new System.Drawing.Size(218, 20);
-			this.textBox1.TabIndex = 5;
-			this.textBox1.Text = "Type here your e-mail address";
+			this.txtEmail.BackColor = System.Drawing.Color.DarkGray;
+			this.txtEmail.BorderStyle = System.Windows.Forms.BorderStyle.None;
+			this.txtEmail.ForeColor = System.Drawing.Color.WhiteSmoke;
+			this.txtEmail.Location = new System.Drawing.Point(369, 146);
+			this.txtEmail.Multiline = true;
+			this.txtEmail.Name = "txtEmail";
+			this.txtEmail.Size = new System.Drawing.Size(218, 20);
+			this.txtEmail.TabIndex = 5;
+			this.txtEmail.Text = "Type here your e-mail address";
 			// 
-			// textBox2
+			// txtPassword
 			// 
-			this.textBox2.BackColor = System.Drawing.Color.DarkGray;
-			this.textBox2.BorderStyle = System.Windows.Forms.BorderStyle.None;
-			this.textBox2.ForeColor = System.Drawing.Color.WhiteSmoke;
-			this.textBox2.Location = new System.Drawing.Point(369, 207);
-			this.textBox2.Multiline = true;
-			this.textBox2.Name = "textBox2";
-			this.textBox2.Size = new System.Drawing.Size(218, 20);
-			this.textBox2.TabIndex = 6;
-			this.textBox2.Text = "Type here your password";
+			this.txtPassword.BackColor = System.Drawing.Color.DarkGray;
+			this.txtPassword.BorderStyle = System.Windows.Forms.BorderStyle.None;
+			this.txtPassword.ForeColor = System.Drawing.Color.WhiteSmoke;
+			this.txtPassword.Location = new System.Drawing.Point(369, 203);
+			this.txtPassword.Multiline = true;
+			this.txtPassword.Name = "txtPassword";
+			this.txtPassword.Size = new System.Drawing.Size(218, 20);
+			this.txtPassword.TabIndex = 6;
+			this.txtPassword.Text = "Type here your password";
 			// 
 			// cbLembrarSenha
 			// 
@@ -194,7 +194,7 @@ namespace Bookstore.Forms
 			// pbIconEmail
 			// 
 			this.pbIconEmail.Image = ((System.Drawing.Image)(resources.GetObject("pbIconEmail.Image")));
-			this.pbIconEmail.Location = new System.Drawing.Point(330, 142);
+			this.pbIconEmail.Location = new System.Drawing.Point(330, 143);
 			this.pbIconEmail.Name = "pbIconEmail";
 			this.pbIconEmail.Size = new System.Drawing.Size(32, 27);
 			this.pbIconEmail.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -204,7 +204,7 @@ namespace Bookstore.Forms
 			// pbIconPassword
 			// 
 			this.pbIconPassword.Image = ((System.Drawing.Image)(resources.GetObject("pbIconPassword.Image")));
-			this.pbIconPassword.Location = new System.Drawing.Point(331, 203);
+			this.pbIconPassword.Location = new System.Drawing.Point(330, 203);
 			this.pbIconPassword.Name = "pbIconPassword";
 			this.pbIconPassword.Size = new System.Drawing.Size(32, 27);
 			this.pbIconPassword.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -236,8 +236,8 @@ namespace Bookstore.Forms
 			this.Controls.Add(this.label2);
 			this.Controls.Add(this.pictureBox5);
 			this.Controls.Add(this.cbLembrarSenha);
-			this.Controls.Add(this.textBox2);
-			this.Controls.Add(this.textBox1);
+			this.Controls.Add(this.txtPassword);
+			this.Controls.Add(this.txtEmail);
 			this.Controls.Add(this.label1);
 			this.Controls.Add(this.pbPassword);
 			this.Controls.Add(this.pbEmail);
