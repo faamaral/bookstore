@@ -1,8 +1,8 @@
 C:\Users\Fabiano\Documents\SharpDevelop Projects\Bookstore\Bookstore\obj\Debug\Bookstore.csprojResolveAssemblyReference.cache
-C:\Users\Fabiano\Documents\SharpDevelop Projects\Bookstore\Bookstore\obj\Debug\Bookstore.Frames.FrmLogin.resources
 C:\Users\Fabiano\Documents\SharpDevelop Projects\Bookstore\Bookstore\obj\Debug\Bookstore.csproj.GenerateResource.Cache
 C:\Users\Fabiano\Documents\SharpDevelop Projects\Bookstore\Bookstore\bin\Debug\Bookstore.exe.config
 C:\Users\Fabiano\Documents\SharpDevelop Projects\Bookstore\Bookstore\bin\Debug\Bookstore.exe
 C:\Users\Fabiano\Documents\SharpDevelop Projects\Bookstore\Bookstore\bin\Debug\Bookstore.pdb
 C:\Users\Fabiano\Documents\SharpDevelop Projects\Bookstore\Bookstore\obj\Debug\Bookstore.exe
 C:\Users\Fabiano\Documents\SharpDevelop Projects\Bookstore\Bookstore\obj\Debug\Bookstore.pdb
+C:\Users\Fabiano\Documents\SharpDevelop Projects\Bookstore\Bookstore\obj\Debug\Bookstore.Forms.FmLogin.resources

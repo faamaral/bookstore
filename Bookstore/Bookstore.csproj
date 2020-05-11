@@ -55,10 +55,6 @@
     <Compile Include="Forms\FmLogin.Designer.cs">
       <DependentUpon>FmLogin.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\FrmLogin.cs" />
-    <Compile Include="Forms\FrmLogin.Designer.cs">
-      <DependentUpon>FrmLogin.cs</DependentUpon>
-    </Compile>
     <Compile Include="MainForm.cs" />
     <Compile Include="MainForm.Designer.cs">
       <DependentUpon>MainForm.cs</DependentUpon>
@@ -68,7 +64,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
+    <None Include="Assets\passwordIcon.png" />
+    <None Include="Assets\IconEmail.png" />
+    <None Include="Assets\passwordIconWhite.png" />
     <None Include="Assets\iconApp.png" />
+    <None Include="Assets\iconBtnLogar.png" />
+    <None Include="Assets\iconExit.png" />
     <None Include="Assets\labelLoginImg %281%29.png" />
     <None Include="Assets\userAccount.png" />
     <None Include="Assets\fotoLogin.png" />
@@ -81,12 +82,6 @@
   <ItemGroup>
     <EmbeddedResource Include="Forms\FmLogin.resx">
       <DependentUpon>FmLogin.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\FrmLogin.resx">
-      <DependentUpon>FrmLogin.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Login.resx">
-      <DependentUpon>FrmLogin.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
