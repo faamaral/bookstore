@@ -55,6 +55,10 @@
     <Compile Include="Forms\FmLogin.Designer.cs">
       <DependentUpon>FmLogin.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\FmRegister.cs" />
+    <Compile Include="Forms\FmRegister.Designer.cs">
+      <DependentUpon>FmRegister.cs</DependentUpon>
+    </Compile>
     <Compile Include="MainForm.cs" />
     <Compile Include="MainForm.Designer.cs">
       <DependentUpon>MainForm.cs</DependentUpon>
@@ -64,6 +68,10 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
+    <None Include="Assets\iconBack.png" />
+    <None Include="Assets\iconClose.png" />
+    <None Include="Assets\iconNome.png" />
+    <None Include="Assets\iconRegister.png" />
     <None Include="Assets\passwordIcon.png" />
     <None Include="Assets\IconEmail.png" />
     <None Include="Assets\passwordIconWhite.png" />
@@ -82,6 +90,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Forms\FmLogin.resx">
       <DependentUpon>FmLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FmRegister.resx">
+      <DependentUpon>FmRegister.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

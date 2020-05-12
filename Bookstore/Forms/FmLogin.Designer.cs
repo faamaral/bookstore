@@ -28,6 +28,7 @@ namespace Bookstore.Forms
 		private System.Windows.Forms.PictureBox pbIconEmail;
 		private System.Windows.Forms.PictureBox pbIconPassword;
 		private System.Windows.Forms.PictureBox pbExit;
+		private System.Windows.Forms.PictureBox pbCloseLogin;
 		
 		/// <summary>
 		/// Disposes resources used by the form.
@@ -65,6 +66,7 @@ namespace Bookstore.Forms
 			this.pbIconEmail = new System.Windows.Forms.PictureBox();
 			this.pbIconPassword = new System.Windows.Forms.PictureBox();
 			this.pbExit = new System.Windows.Forms.PictureBox();
+			this.pbCloseLogin = new System.Windows.Forms.PictureBox();
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.pbIconUser)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.pbEmail)).BeginInit();
@@ -73,6 +75,7 @@ namespace Bookstore.Forms
 			((System.ComponentModel.ISupportInitialize)(this.pbIconEmail)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.pbIconPassword)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.pbExit)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.pbCloseLogin)).BeginInit();
 			this.SuspendLayout();
 			// 
 			// pictureBox1
@@ -190,6 +193,7 @@ namespace Bookstore.Forms
 			this.lblRegister.Size = new System.Drawing.Size(88, 23);
 			this.lblRegister.TabIndex = 10;
 			this.lblRegister.Text = "Register now";
+			this.lblRegister.Click += new System.EventHandler(this.LblRegisterClick);
 			// 
 			// pbIconEmail
 			// 
@@ -225,12 +229,25 @@ namespace Bookstore.Forms
 			this.pbExit.TabStop = false;
 			this.pbExit.Click += new System.EventHandler(this.PbExitClick);
 			// 
+			// pbCloseLogin
+			// 
+			this.pbCloseLogin.Cursor = System.Windows.Forms.Cursors.Hand;
+			this.pbCloseLogin.Image = ((System.Drawing.Image)(resources.GetObject("pbCloseLogin.Image")));
+			this.pbCloseLogin.Location = new System.Drawing.Point(605, 12);
+			this.pbCloseLogin.Name = "pbCloseLogin";
+			this.pbCloseLogin.Size = new System.Drawing.Size(28, 18);
+			this.pbCloseLogin.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+			this.pbCloseLogin.TabIndex = 18;
+			this.pbCloseLogin.TabStop = false;
+			this.pbCloseLogin.Click += new System.EventHandler(this.PbCloseLoginClick);
+			// 
 			// FmLogin
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.BackColor = System.Drawing.Color.Black;
 			this.ClientSize = new System.Drawing.Size(645, 394);
+			this.Controls.Add(this.pbCloseLogin);
 			this.Controls.Add(this.pbExit);
 			this.Controls.Add(this.pbIconPassword);
 			this.Controls.Add(this.pbIconEmail);
@@ -257,6 +274,7 @@ namespace Bookstore.Forms
 			((System.ComponentModel.ISupportInitialize)(this.pbIconEmail)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.pbIconPassword)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.pbExit)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.pbCloseLogin)).EndInit();
 			this.ResumeLayout(false);
 			this.PerformLayout();
 

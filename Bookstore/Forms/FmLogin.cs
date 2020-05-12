@@ -17,12 +17,15 @@ namespace Bookstore.Forms
 	/// </summary>
 	public partial class FmLogin : Form
 	{
+		FmRegister form = new FmRegister();
 		public FmLogin()
 		{
 			//
 			// The InitializeComponent() call is required for Windows Forms designer support.
 			//
 			InitializeComponent();
+			// Inicia o form no centro da tela de login
+			form.StartPosition = FormStartPosition.CenterParent;
 //			removeBackground(pbEmail, pbIconEmail);
 //			removeBackground(pbPassword, pbIconPassword);
 			
@@ -44,5 +47,15 @@ namespace Bookstore.Forms
 		{
 			Application.Exit();
 		}
+		void LblRegisterClick(object sender, EventArgs e)
+		{
+			
+			form.ShowDialog();
+		}
+		void PbCloseLoginClick(object sender, EventArgs e)
+		{
+			Application.Exit();
+		}
+		
 	}
 }

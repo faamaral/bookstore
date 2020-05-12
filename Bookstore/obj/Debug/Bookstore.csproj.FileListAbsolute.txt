@@ -6,3 +6,4 @@ C:\Users\Fabiano\Documents\SharpDevelop Projects\Bookstore\Bookstore\bin\Debug\B
 C:\Users\Fabiano\Documents\SharpDevelop Projects\Bookstore\Bookstore\obj\Debug\Bookstore.exe
 C:\Users\Fabiano\Documents\SharpDevelop Projects\Bookstore\Bookstore\obj\Debug\Bookstore.pdb
 C:\Users\Fabiano\Documents\SharpDevelop Projects\Bookstore\Bookstore\obj\Debug\Bookstore.Forms.FmLogin.resources
+C:\Users\Fabiano\Documents\SharpDevelop Projects\Bookstore\Bookstore\obj\Debug\Bookstore.Forms.FmRegister.resources
