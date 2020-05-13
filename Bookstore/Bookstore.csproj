@@ -158,6 +158,7 @@
   <ItemGroup>
     <Compile Include="Database\ConnectionDB.cs" />
     <Compile Include="Database\ControlerUsers.cs" />
+    <Compile Include="Database\UsersManager.cs" />
     <Compile Include="Forms\FmDashboard.cs" />
     <Compile Include="Forms\FmDashboard.Designer.cs">
       <DependentUpon>FmDashboard.cs</DependentUpon>

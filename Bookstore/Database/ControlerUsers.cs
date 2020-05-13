@@ -28,6 +28,28 @@ namespace Bookstore.Database
 			
 		}
 		
+		public bool checkId(string id)
+		{
+			sqlCom.CommandText = "SELECT * FROM users WHERE id = @id";
+			sqlCom.Parameters.AddWithValue("@id", id);
+			try
+			{
+				sqlCom.Connection = conn.connectionDatabase();
+				dr = sqlCom.ExecuteReader();
+				if (dr.HasRows)
+				{
+					setExistsControl(true);
+				}
+				conn.disconnectDatabase();
+				dr.Close();
+			}
+			catch(SQLiteException)
+			{
+				setMessageControl("An error ocurred with the database");	
+			}
+			return getExistsControl();
+		}
+		
 		public bool checkUser(string email, string password)
 		{
 			sqlCom.CommandText = "SELECT * FROM users WHERE email = @email AND password = @password";
@@ -82,22 +104,22 @@ namespace Bookstore.Database
 			
 		}
 
-		void setExistsControl(bool exist)
+		public void setExistsControl(bool exist)
 		{
 			this.exists = exist;
 		}
 
-		bool getExistsControl()
+		public bool getExistsControl()
 		{
 			return this.exists;
 		}
 
-		void setMessageControl(string msg)
+		public void setMessageControl(string msg)
 		{
 			this.message = msg;
 		}
 		
-		string getMessageControl()
+		public string getMessageControl()
 		{
 			return this.message;
 		}
