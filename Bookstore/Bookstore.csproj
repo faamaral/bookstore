@@ -32,6 +32,18 @@
     <DefineConstants>TRACE</DefineConstants>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="FontAwesome.Sharp">
+      <HintPath>..\packages\FontAwesome.Sharp.5.12.1\lib\net45\FontAwesome.Sharp.dll</HintPath>
+    </Reference>
+    <Reference Include="MetroFramework">
+      <HintPath>..\packages\MetroModernUI.1.4.0.0\lib\net\MetroFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="MetroFramework.Design">
+      <HintPath>..\packages\MetroModernUI.1.4.0.0\lib\net\MetroFramework.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="MetroFramework.Fonts">
+      <HintPath>..\packages\MetroModernUI.1.4.0.0\lib\net\MetroFramework.Fonts.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CSharp">
       <RequiredTargetFramework>4.0</RequiredTargetFramework>
     </Reference>
@@ -51,6 +63,10 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Forms\FmDashboard.cs" />
+    <Compile Include="Forms\FmDashboard.Designer.cs">
+      <DependentUpon>FmDashboard.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\FmLogin.cs" />
     <Compile Include="Forms\FmLogin.Designer.cs">
       <DependentUpon>FmLogin.cs</DependentUpon>
@@ -81,6 +97,7 @@
     <None Include="Assets\labelLoginImg %281%29.png" />
     <None Include="Assets\userAccount.png" />
     <None Include="Assets\fotoLogin.png" />
+    <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Database" />
