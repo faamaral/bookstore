@@ -21,7 +21,7 @@ namespace Bookstore.Database
 		private string message = "";
 		SQLiteCommand sqlCom = new SQLiteCommand();
 		ConnectionDB conn = new ConnectionDB();
-		SQLiteDataReader dr = new SQLiteDataReader();
+		SQLiteDataReader dr;
 		
 		public ControlerUsers()
 		{
@@ -43,7 +43,7 @@ namespace Bookstore.Database
 				conn.disconnectDatabase();
 				dr.Close();
 			}
-			catch(SQLiteException)
+			catch(Exception)
 			{
 				setMessageControl("An error ocurred with the database");	
 			}
@@ -78,11 +78,11 @@ namespace Bookstore.Database
 			setExistsControl(false);
 			if(password.Equals(confimPassword))
 			{
-				sqlCom.CommandText = "INSERT INTO users VALUES (@name, @email, @password, @id)";
+				sqlCom.CommandText = "INSERT INTO users VALUES (@id, @name, @email, @password)";
+				sqlCom.Parameters.AddWithValue("@id", id);
 				sqlCom.Parameters.AddWithValue("@name", name);
 				sqlCom.Parameters.AddWithValue("@email", email);
 				sqlCom.Parameters.AddWithValue("@password", password);
-				sqlCom.Parameters.AddWithValue("@id", id);
 				
 				try
 				{
@@ -92,7 +92,7 @@ namespace Bookstore.Database
 					setMessageControl("User successfully registred");
 					setExistsControl(true);
 				}
-				catch(SQLiteException)
+				catch(Exception)
 				{
 					setMessageControl("An error ocurred with the database");
 				}
@@ -101,6 +101,7 @@ namespace Bookstore.Database
 			{
 				setMessageControl("Password do not match!");
 			}
+			return getMessageControl();
 			
 		}
 

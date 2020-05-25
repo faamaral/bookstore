@@ -17,18 +17,17 @@ namespace Bookstore.Database
 	/// </summary>
 	public class ConnectionDB
 	{
-		private static SQLiteConnection connection;
+		public SQLiteConnection connection = new SQLiteConnection("Data Source=dbBookstore.db; version=3");
 		public ConnectionDB()
 		{
 			// string de conexão com o banco de dados
-			connection = new SQLiteConnection("Data Source = dbBookstore.db");
 		}
 		
 		// metodo com finalidade de fazer a abertura do banco de dados
 		public SQLiteConnection connectionDatabase()
 		{
 			// verifica se a conexão esta fechada, caso esteja a conexão será aberta
-			if(connection.State == System.Data.ConnectionState.Closed)
+			if(connection.State == ConnectionState.Closed)
 			{
 				connection.Open();
 			}
@@ -36,7 +35,7 @@ namespace Bookstore.Database
 		}
 		public void disconnectDatabase()
 		{
-			if(connection.State == System.Data.ConnectionState.Open)
+			if(connection.State == ConnectionState.Open)
 			{
 				connection.Close();
 			}

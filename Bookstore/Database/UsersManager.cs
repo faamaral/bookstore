@@ -6,7 +6,10 @@
  * 
  * Para alterar este modelo use Ferramentas | Opções | Codificação | Editar Cabeçalhos Padrão.
  */
+
+using System.Security.Cryptography;
 using System;
+using System.Linq;
 using System.Runtime.Remoting.Messaging;
 
 namespace Bookstore.Database
@@ -18,42 +21,55 @@ namespace Bookstore.Database
 	{
 		private bool exists = false;
 		private string message = "";
-		ControlerUsers usr = new ControlerUsers();
+		ControleUsers2 usr = new ControleUsers2();
+
 		public UsersManager()
 		{
 		}
+
 		private string idGenerator()
 		{
 			var r = new Random();
 			int a = r.Next(1000, 5000);
 			string hexValue = a.ToString("X");
-			while (checkId(hexValue))
+			if (usr.checkId2(hexValue))
 			{
 				return idGenerator();
 			}
 			
 			return hexValue;
 		}
-		
+
+		public string Get8Digits()
+		{
+			var bytes = new byte[4];
+			var rng = RandomNumberGenerator.Create();
+			rng.GetBytes(bytes);
+			uint random = BitConverter.ToUInt32(bytes, 0) % 100000000;
+			return String.Format("{0:D8}", random);
+		}
+
 		public bool acess(string email, string password)
 		{
-			setExistsUser(usr.checkUser(email, password));
+			setExistsUser(usr.checkUser2(email, password));
 			
-			if (!usr.getMessageControl().Equals(""))
+			if (!usr.getMessage2().Equals(""))
 			{
-				setMessageUser(usr.getMessageControl());
+				setMessageUser(usr.getMessage2());
 			}
 			return getExistsUser();
 		}
 		
 		public string register(string name, string email, string password, string confirmPassword)
 		{
-			string id = idGenerator();
-			usr.registerNewUser(name, email, password, confimPassword, id);
-			if (usr.getExistsControl())
+			//string id = idGenerator();
+			//string id = Get8Digits();
+			string id = "1234ABCD";
+			usr.registerNewUser2(id, name, email, password, confirmPassword);
+			if (usr.getExist2())
 			{
 				setExistsUser(true);
-				setMessageUser(usr.getMessageControl());
+				setMessageUser(usr.getMessage2());
 			}
 			return getMessageUser();
 		}

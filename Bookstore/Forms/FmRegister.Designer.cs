@@ -15,15 +15,15 @@ namespace Bookstore.Forms
 		/// </summary>
 		private System.ComponentModel.IContainer components = null;
 		private System.Windows.Forms.PictureBox pbBGRegister;
-		private System.Windows.Forms.TextBox txtPasswordRegister;
 		private System.Windows.Forms.TextBox txtEmailRegister;
+		private System.Windows.Forms.TextBox txtNameRegister;
 		private System.Windows.Forms.PictureBox pbPasswordRegister;
 		private System.Windows.Forms.PictureBox pbEmailRegister;
 		private System.Windows.Forms.PictureBox pbIconUserRegister;
 		private System.Windows.Forms.PictureBox pictureBox1;
 		private System.Windows.Forms.PictureBox pictureBox2;
-		private System.Windows.Forms.TextBox textBox1;
-		private System.Windows.Forms.TextBox textBox2;
+		private System.Windows.Forms.TextBox txtConfirmPassword;
+		private System.Windows.Forms.TextBox txtPasswordRegister;
 		private System.Windows.Forms.PictureBox pbRegisterNowRegoster;
 		private System.Windows.Forms.PictureBox pbCloseRegister;
 		private System.Windows.Forms.Label label1;
@@ -55,15 +55,15 @@ namespace Bookstore.Forms
 		{
 			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FmRegister));
 			this.pbBGRegister = new System.Windows.Forms.PictureBox();
-			this.txtPasswordRegister = new System.Windows.Forms.TextBox();
 			this.txtEmailRegister = new System.Windows.Forms.TextBox();
+			this.txtNameRegister = new System.Windows.Forms.TextBox();
 			this.pbPasswordRegister = new System.Windows.Forms.PictureBox();
 			this.pbEmailRegister = new System.Windows.Forms.PictureBox();
 			this.pbIconUserRegister = new System.Windows.Forms.PictureBox();
 			this.pictureBox1 = new System.Windows.Forms.PictureBox();
 			this.pictureBox2 = new System.Windows.Forms.PictureBox();
-			this.textBox1 = new System.Windows.Forms.TextBox();
-			this.textBox2 = new System.Windows.Forms.TextBox();
+			this.txtConfirmPassword = new System.Windows.Forms.TextBox();
+			this.txtPasswordRegister = new System.Windows.Forms.TextBox();
 			this.pbRegisterNowRegoster = new System.Windows.Forms.PictureBox();
 			this.pbCloseRegister = new System.Windows.Forms.PictureBox();
 			this.label1 = new System.Windows.Forms.Label();
@@ -95,29 +95,31 @@ namespace Bookstore.Forms
 			this.pbBGRegister.TabIndex = 1;
 			this.pbBGRegister.TabStop = false;
 			// 
-			// txtPasswordRegister
-			// 
-			this.txtPasswordRegister.BackColor = System.Drawing.Color.DarkGray;
-			this.txtPasswordRegister.BorderStyle = System.Windows.Forms.BorderStyle.None;
-			this.txtPasswordRegister.ForeColor = System.Drawing.Color.WhiteSmoke;
-			this.txtPasswordRegister.Location = new System.Drawing.Point(370, 161);
-			this.txtPasswordRegister.Multiline = true;
-			this.txtPasswordRegister.Name = "txtPasswordRegister";
-			this.txtPasswordRegister.Size = new System.Drawing.Size(218, 27);
-			this.txtPasswordRegister.TabIndex = 11;
-			this.txtPasswordRegister.Text = "Type here your e-mail address";
-			// 
 			// txtEmailRegister
 			// 
 			this.txtEmailRegister.BackColor = System.Drawing.Color.DarkGray;
 			this.txtEmailRegister.BorderStyle = System.Windows.Forms.BorderStyle.None;
 			this.txtEmailRegister.ForeColor = System.Drawing.Color.WhiteSmoke;
-			this.txtEmailRegister.Location = new System.Drawing.Point(370, 110);
+			this.txtEmailRegister.Location = new System.Drawing.Point(370, 161);
 			this.txtEmailRegister.Multiline = true;
 			this.txtEmailRegister.Name = "txtEmailRegister";
-			this.txtEmailRegister.Size = new System.Drawing.Size(218, 20);
-			this.txtEmailRegister.TabIndex = 10;
-			this.txtEmailRegister.Text = "TYPE HERE YOUR FULL NAME";
+			this.txtEmailRegister.Size = new System.Drawing.Size(218, 27);
+			this.txtEmailRegister.TabIndex = 11;
+			this.txtEmailRegister.Text = "Type here your e-mail address";
+			this.txtEmailRegister.Click += new System.EventHandler(this.TxtEmailRegisterClick);
+			// 
+			// txtNameRegister
+			// 
+			this.txtNameRegister.BackColor = System.Drawing.Color.DarkGray;
+			this.txtNameRegister.BorderStyle = System.Windows.Forms.BorderStyle.None;
+			this.txtNameRegister.ForeColor = System.Drawing.Color.WhiteSmoke;
+			this.txtNameRegister.Location = new System.Drawing.Point(370, 110);
+			this.txtNameRegister.Multiline = true;
+			this.txtNameRegister.Name = "txtNameRegister";
+			this.txtNameRegister.Size = new System.Drawing.Size(218, 20);
+			this.txtNameRegister.TabIndex = 10;
+			this.txtNameRegister.Text = "TYPE HERE YOUR FULL NAME";
+			this.txtNameRegister.Click += new System.EventHandler(this.TxtNameRegisterClick);
 			// 
 			// pbPasswordRegister
 			// 
@@ -169,32 +171,35 @@ namespace Bookstore.Forms
 			this.pictureBox2.TabIndex = 12;
 			this.pictureBox2.TabStop = false;
 			// 
-			// textBox1
+			// txtConfirmPassword
 			// 
-			this.textBox1.BackColor = System.Drawing.Color.DarkGray;
-			this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-			this.textBox1.ForeColor = System.Drawing.Color.WhiteSmoke;
-			this.textBox1.Location = new System.Drawing.Point(370, 271);
-			this.textBox1.Multiline = true;
-			this.textBox1.Name = "textBox1";
-			this.textBox1.Size = new System.Drawing.Size(218, 20);
-			this.textBox1.TabIndex = 15;
-			this.textBox1.Text = "Repeat your password";
+			this.txtConfirmPassword.BackColor = System.Drawing.Color.DarkGray;
+			this.txtConfirmPassword.BorderStyle = System.Windows.Forms.BorderStyle.None;
+			this.txtConfirmPassword.ForeColor = System.Drawing.Color.WhiteSmoke;
+			this.txtConfirmPassword.Location = new System.Drawing.Point(370, 271);
+			this.txtConfirmPassword.Multiline = true;
+			this.txtConfirmPassword.Name = "txtConfirmPassword";
+			this.txtConfirmPassword.Size = new System.Drawing.Size(218, 20);
+			this.txtConfirmPassword.TabIndex = 15;
+			this.txtConfirmPassword.Text = "Repeat your password";
+			this.txtConfirmPassword.Click += new System.EventHandler(this.TxtConfirmPasswordClick);
 			// 
-			// textBox2
+			// txtPasswordRegister
 			// 
-			this.textBox2.BackColor = System.Drawing.Color.DarkGray;
-			this.textBox2.BorderStyle = System.Windows.Forms.BorderStyle.None;
-			this.textBox2.ForeColor = System.Drawing.Color.WhiteSmoke;
-			this.textBox2.Location = new System.Drawing.Point(370, 220);
-			this.textBox2.Multiline = true;
-			this.textBox2.Name = "textBox2";
-			this.textBox2.Size = new System.Drawing.Size(218, 20);
-			this.textBox2.TabIndex = 14;
-			this.textBox2.Text = "Type here your password";
+			this.txtPasswordRegister.BackColor = System.Drawing.Color.DarkGray;
+			this.txtPasswordRegister.BorderStyle = System.Windows.Forms.BorderStyle.None;
+			this.txtPasswordRegister.ForeColor = System.Drawing.Color.WhiteSmoke;
+			this.txtPasswordRegister.Location = new System.Drawing.Point(370, 220);
+			this.txtPasswordRegister.Multiline = true;
+			this.txtPasswordRegister.Name = "txtPasswordRegister";
+			this.txtPasswordRegister.Size = new System.Drawing.Size(218, 20);
+			this.txtPasswordRegister.TabIndex = 14;
+			this.txtPasswordRegister.Text = "Type here your password";
+			this.txtPasswordRegister.Click += new System.EventHandler(this.TxtPasswordRegisterClick);
 			// 
 			// pbRegisterNowRegoster
 			// 
+			this.pbRegisterNowRegoster.Cursor = System.Windows.Forms.Cursors.Hand;
 			this.pbRegisterNowRegoster.Image = ((System.Drawing.Image)(resources.GetObject("pbRegisterNowRegoster.Image")));
 			this.pbRegisterNowRegoster.Location = new System.Drawing.Point(341, 324);
 			this.pbRegisterNowRegoster.Name = "pbRegisterNowRegoster";
@@ -202,6 +207,7 @@ namespace Bookstore.Forms
 			this.pbRegisterNowRegoster.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
 			this.pbRegisterNowRegoster.TabIndex = 16;
 			this.pbRegisterNowRegoster.TabStop = false;
+			this.pbRegisterNowRegoster.Click += new System.EventHandler(this.PbRegisterNowRegosterClick);
 			// 
 			// pbCloseRegister
 			// 
@@ -282,12 +288,12 @@ namespace Bookstore.Forms
 			this.Controls.Add(this.label1);
 			this.Controls.Add(this.pbCloseRegister);
 			this.Controls.Add(this.pbRegisterNowRegoster);
-			this.Controls.Add(this.textBox1);
-			this.Controls.Add(this.textBox2);
+			this.Controls.Add(this.txtConfirmPassword);
+			this.Controls.Add(this.txtPasswordRegister);
 			this.Controls.Add(this.pictureBox1);
 			this.Controls.Add(this.pictureBox2);
-			this.Controls.Add(this.txtPasswordRegister);
 			this.Controls.Add(this.txtEmailRegister);
+			this.Controls.Add(this.txtNameRegister);
 			this.Controls.Add(this.pbPasswordRegister);
 			this.Controls.Add(this.pbEmailRegister);
 			this.Controls.Add(this.pbIconUserRegister);

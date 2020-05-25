@@ -6,8 +6,10 @@
  * 
  * Para alterar este modelo use Ferramentas | Opções | Codificação | Editar Cabeçalhos Padrão.
  */
+using Bookstore.Database;
 using System;
 using System.Drawing;
+using System.Threading;
 using System.Windows.Forms;
 
 namespace Bookstore.Forms
@@ -18,6 +20,10 @@ namespace Bookstore.Forms
 	public partial class FmLogin : Form
 	{
 		FmRegister form = new FmRegister();
+		UsersManager manager = new UsersManager();
+		crudUsers usr = new crudUsers();
+		public string str = "";
+		Thread th;
 		public FmLogin()
 		{
 			//
@@ -43,19 +49,62 @@ namespace Bookstore.Forms
 //			pb2.BackColor = Color.Transparent;
 //			
 //		}
+
+		private void initFrame()
+		{
+			Application.Run(new FmDashboard());
+		}
 		void PbExitClick(object sender, EventArgs e)
 		{
 			Application.Exit();
 		}
 		void LblRegisterClick(object sender, EventArgs e)
 		{
-			
+			lblRegister.ForeColor = Color.DarkMagenta;
 			form.ShowDialog();
+			lblRegister.ForeColor = Color.FromArgb(255, 128, 0);
+			
 		}
 		void PbCloseLoginClick(object sender, EventArgs e)
 		{
 			Application.Exit();
 		}
-		
+		void LblRegisterMouseHover(object sender, EventArgs e)
+		{
+			lblRegister.ForeColor = Color.DarkMagenta;
+		}
+		void LblRegisterMouseLeave(object sender, EventArgs e)
+		{
+			lblRegister.ForeColor = Color.FromArgb(255, 128, 0);
+		}
+		void PictureBox5MouseHover(object sender, EventArgs e)
+		{
+	
+		}
+
+		private void pictureBox5_Click(object sender, EventArgs e)
+		{
+			if (txtEmail.Text.Equals("") || txtPassword.Text.Equals(""))
+			{
+				MessageBox.Show("Todos os campos devem estar preenchidos!!!");
+				txtEmail.Focus();
+			}
+			else
+			{
+				usr.checkUsers(txtEmail.Text, txtPassword.Text);
+				if (usr.getHas())
+				{
+						str = txtEmail.Text;
+						this.Close();
+						th = new Thread(initFrame);
+						th.SetApartmentState(ApartmentState.STA);
+						th.Start();
+				}
+				else
+				{
+						MessageBox.Show("Usuario Invalido!! \nOu senha incorreta");
+				}
+			}
+		}
 	}
 }
