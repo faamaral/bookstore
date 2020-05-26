@@ -18,6 +18,7 @@ namespace Bookstore.Forms
 	/// </summary>
 	public partial class FmRegister : Form
 	{
+		crudUsers cd = new crudUsers();
 		public FmRegister()
 		{
 			//
@@ -29,14 +30,25 @@ namespace Bookstore.Forms
 			// TODO: Add constructor code after the InitializeComponent() call.
 			//
 		}
+
+		private int nickExist(string s)
+		{
+			if (cd.checkNick(s))
+			{
+				return 1;
+			}
+			return 0;
+		}
 		void PbCloseRegisterClick(object sender, EventArgs e)
 		{
 			this.Close();
 		}
+
+
 		void PbRegisterNowRegosterClick(object sender, EventArgs e)
 		{
 			if (txtNameRegister.Text.Equals("")||txtEmailRegister.Text.Equals("")||
-			    txtPasswordRegister.Text.Equals("")||txtConfirmPassword.Text.Equals("")) {
+			    txtPasswordRegister.Text.Equals("")||txtConfirmPassword.Text.Equals("")|| cbFunctionUser.Text.Equals("Choose a function")) {
 				
 				if (checkText(txtNameRegister.Text)||checkText(txtEmailRegister.Text)||checkText(txtPasswordRegister.Text)
 				    ||checkText(txtConfirmPassword.Text)) {
@@ -46,18 +58,39 @@ namespace Bookstore.Forms
 			}
 			else
 			{
-				UsersManager usr = new UsersManager();
-				string msg = usr.register(txtNameRegister.Text, txtEmailRegister.Text, txtPasswordRegister.Text, txtConfirmPassword.Text);
-				if (usr.getExistsUser())
+				crudUsers usr = new crudUsers();
+				if(nickExist(txtEmailRegister.Text)==1)
 				{
-					MessageBox.Show(msg, "Sucess", MessageBoxButtons.OK, MessageBoxIcon.Information);
-					this.Close();
+					MessageBox.Show("Nick already existed in our system, try again with other nick");
+					txtEmailRegister.Clear();
+					txtEmailRegister.Focus();
 				}
 				else
 				{
-					MessageBox.Show(msg);
-				}
-			}
+                    string funcao = cbFunctionUser.SelectedItem.ToString();
+
+                    if (txtPasswordRegister.Text.Equals(txtConfirmPassword.Text))
+                    {
+                        string msg = usr.registerUsers(txtNameRegister.Text, txtEmailRegister.Text, txtPasswordRegister.Text, funcao);
+                        if (msg == "Sucess!")
+                        {
+                            MessageBox.Show(msg, "Sucess", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            this.Close();
+                        }
+                        else
+                        {
+                            MessageBox.Show("Any Error has ocurred on register!");
+                        }
+                    }
+                    else
+                    {
+                        MessageBox.Show("Passwords aren't equals");
+                    }
+                }
+
+
+
+            }
 		}
 		void TxtNameRegisterClick(object sender, EventArgs e)
 		{
@@ -112,17 +145,30 @@ namespace Bookstore.Forms
 				txtConfirmPassword.Clear();
 			}
 		}
-		
-		
-		
-//		void TxtNameRegisterEnter(object sender, EventArgs e)
-//		{
-//			if(checkText(txtNameRegister.Text))
-//			{
-//				txtNameRegister.Text += "";
-//			}
-//		}
-		
-		
+
+		private void FmRegister_Load(object sender, EventArgs e)
+		{
+			cbFunctionUser.Items.Add("Administrator");
+			cbFunctionUser.Items.Add("Sale Manager");
+			cbFunctionUser.Items.Add("Stoke Manager");
+			cbFunctionUser.Items.Add("Other");
+		}
+
+		private void cbFunctionUser_KeyPress(object sender, KeyPressEventArgs e)
+		{
+			e.Handled = true;
+		}
+
+
+
+		//		void TxtNameRegisterEnter(object sender, EventArgs e)
+		//		{
+		//			if(checkText(txtNameRegister.Text))
+		//			{
+		//				txtNameRegister.Text += "";
+		//			}
+		//		}
+
+
 	}
 }

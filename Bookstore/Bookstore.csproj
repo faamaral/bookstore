@@ -122,6 +122,7 @@
     <None Include="Assets\iconClose.png" />
     <None Include="Assets\iconNome.png" />
     <None Include="Assets\iconRegister.png" />
+    <None Include="Assets\function_userIcon.png" />
     <None Include="Assets\passwordIcon.png" />
     <None Include="Assets\IconEmail.png" />
     <None Include="Assets\passwordIconWhite.png" />

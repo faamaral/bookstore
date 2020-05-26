@@ -10,8 +10,8 @@ C:\Users\Fabiano\Documents\SharpDevelop Projects\Bookstore\Bookstore\bin\Debug\S
 C:\Users\Fabiano\Documents\SharpDevelop Projects\Bookstore\Bookstore\bin\Debug\System.Data.SQLite.xml
 C:\Users\Fabiano\Documents\SharpDevelop Projects\Bookstore\Bookstore\bin\Debug\System.Data.SQLite.EF6.dll
 C:\Users\Fabiano\Documents\SharpDevelop Projects\Bookstore\Bookstore\bin\Debug\System.Data.SQLite.Linq.dll
-C:\Users\Fabiano\Documents\SharpDevelop Projects\Bookstore\Bookstore\obj\Debug\Bookstore.csprojAssemblyReference.cache
-C:\Users\Fabiano\Documents\SharpDevelop Projects\Bookstore\Bookstore\obj\Debug\Bookstore.csproj.CoreCompileInputs.cache
 C:\Users\Fabiano\Documents\SharpDevelop Projects\Bookstore\Bookstore\bin\Debug\System.Data.SqlServerCe.dll
 C:\Users\Fabiano\Documents\SharpDevelop Projects\Bookstore\Bookstore\bin\Debug\System.Data.SQLite.dll.config
+C:\Users\Fabiano\Documents\SharpDevelop Projects\Bookstore\Bookstore\obj\Debug\Bookstore.csprojAssemblyReference.cache
+C:\Users\Fabiano\Documents\SharpDevelop Projects\Bookstore\Bookstore\obj\Debug\Bookstore.csproj.CoreCompileInputs.cache
 C:\Users\Fabiano\Documents\SharpDevelop Projects\Bookstore\Bookstore\obj\Debug\Bookstore.csproj.CopyComplete
