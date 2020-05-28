@@ -15,5 +15,16 @@ namespace Bookstore.Forms
         {
             InitializeComponent();
         }
+
+        private void timerHomepage_Tick(object sender, EventArgs e)
+        {
+            lblTime.Text = DateTime.Now.ToString("HH:mm:ss");
+        }
+
+        private void FmHomePage_Load(object sender, EventArgs e)
+        {
+            DateTime date = DateTime.Now;
+            lblDateHomePage.Text = date.ToLongDateString();
+        }
     }
 }
