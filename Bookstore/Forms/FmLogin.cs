@@ -20,7 +20,7 @@ namespace Bookstore.Forms
 	public partial class FmLogin : Form
 	{
 		FmRegister form = new FmRegister();
-		UsersManager manager = new UsersManager();
+		//UsersManager manager = new UsersManager();
 		crudUsers usr = new crudUsers();
 		public string str = "";
 		Thread th;

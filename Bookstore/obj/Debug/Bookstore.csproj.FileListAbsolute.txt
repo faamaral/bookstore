@@ -19,3 +19,4 @@ C:\Users\Fabiano\Documents\SharpDevelop Projects\Bookstore\Bookstore\obj\Debug\B
 C:\Users\Fabiano\Documents\SharpDevelop Projects\Bookstore\Bookstore\obj\Debug\Bookstore.Properties.Resources.resources
 C:\Users\Fabiano\Documents\SharpDevelop Projects\Bookstore\Bookstore\obj\Debug\Bookstore.Forms.FmBooks.resources
 C:\Users\Fabiano\Documents\SharpDevelop Projects\Bookstore\Bookstore\obj\Debug\Bookstore.Forms.FmHomePage.resources
+C:\Users\Fabiano\Documents\SharpDevelop Projects\Bookstore\Bookstore\obj\Debug\Bookstore.Forms.FmAddOrUpdateBook.resources

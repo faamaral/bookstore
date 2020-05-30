@@ -8,7 +8,7 @@ using System.Text;
 
 namespace Bookstore.Database
 {
-    class crudUsers
+    public class crudUsers
     {
         private ConnectionSQLserverCE conn = new ConnectionSQLserverCE();
         private SqlCeCommand sql = new SqlCeCommand();
