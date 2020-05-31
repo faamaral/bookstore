@@ -133,24 +133,28 @@ namespace Bookstore.Forms
             this.txtEmail.BackColor = System.Drawing.Color.DarkGray;
             this.txtEmail.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtEmail.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.txtEmail.Location = new System.Drawing.Point(369, 146);
+            this.txtEmail.Location = new System.Drawing.Point(369, 148);
             this.txtEmail.Multiline = true;
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(218, 20);
             this.txtEmail.TabIndex = 5;
             this.txtEmail.Text = "Type here your e-mail address";
+            this.txtEmail.Click += new System.EventHandler(this.txtEmail_Click);
+            this.txtEmail.Enter += new System.EventHandler(this.txtEmail_Enter);
             // 
             // txtPassword
             // 
             this.txtPassword.BackColor = System.Drawing.Color.DarkGray;
             this.txtPassword.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtPassword.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.txtPassword.Location = new System.Drawing.Point(369, 203);
+            this.txtPassword.Location = new System.Drawing.Point(369, 209);
+            this.txtPassword.MaxLength = 16;
             this.txtPassword.Multiline = true;
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.Size = new System.Drawing.Size(218, 20);
             this.txtPassword.TabIndex = 6;
             this.txtPassword.Text = "Type here your password";
+            this.txtPassword.Enter += new System.EventHandler(this.txtPassword_Enter);
             // 
             // cbLembrarSenha
             // 
