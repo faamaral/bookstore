@@ -118,14 +118,14 @@ namespace Bookstore.Forms
 				txtPassword.Clear();
 			}
 			
-			txtPassword.PasswordChar = '*';
+			//txtPassword.PasswordChar = '*';
 		}
 
 		private void txtEmail_Enter(object sender, EventArgs e)
 		{
 			if (txtEmail.Text.Equals("Type here your e-mail address"))
 			{
-				txtEmail.SelectAll();
+				
 				
 
 				//txtEmail.Clear();
@@ -134,9 +134,61 @@ namespace Bookstore.Forms
 
 		private void txtEmail_Click(object sender, EventArgs e)
 		{
-			if (txtEmail.Text.Equals("Type here your e-mail address"));
+			if (txtEmail.Text.Equals("Type here your e-mail address"))
 			{
 				txtEmail.Clear();
+			}
+		}
+
+		private void txtEmail_KeyPress(object sender, KeyPressEventArgs e)
+		{
+			if (txtEmail.Text.Equals("Type here your e-mail address"))
+			{
+				txtEmail.Clear();
+			}
+		}
+
+		private void txtPassword_KeyPress(object sender, KeyPressEventArgs e)
+		{
+			if (txtPassword.Text.Equals("Type here your password"))
+			{
+				txtPassword.Clear();
+			}
+			txtPassword.PasswordChar = '*';
+		}
+
+		private void txtEmail_Leave(object sender, EventArgs e)
+		{
+			if(txtEmail.Text.Equals(""))
+			{
+				txtEmail.Text = "Type here your e-mail address";
+			}
+		}
+
+		private bool saveLogin(bool mark)
+		{
+			if(mark)
+			{
+				
+			}
+		}
+
+		private void txtPassword_Leave(object sender, EventArgs e)
+		{
+			if (txtPassword.Text.Equals(""))
+			{
+				if(txtPassword.PasswordChar.Equals('*'))
+				{
+					txtPassword.PasswordChar = '\0';
+					txtPassword.Text = "Type here your password";
+				}
+				else
+				{
+					txtPassword.Text = "Type here your password";
+				}
+				
+				//txtPassword.ResetText();
+				
 			}
 		}
 	}
