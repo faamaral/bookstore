@@ -36,11 +36,24 @@ namespace Bookstore.Forms
             dgvBooks.DataSource = bookControl.showBooks();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        public void disableButtonsBooks()
         {
-            openInPanelContainerBook(new FmAddOrUpdateBook());
-            fmAdd.setTitle("Add a new Book");
+            btnAddNewBook.Enabled = false;
+            btnSearchBook.Enabled = false;
+            btnUpdateData.Enabled = false;
         }
+        public void enableButtonsBook()
+        {
+            btnAddNewBook.Enabled = true;
+            btnSearchBook.Enabled = true;
+            btnUpdateData.Enabled = true;
+        }
+
+        public void ValidaEnableButtons()
+        {
+            this.enableButtonsBook();
+        }
+
         private void openInPanelContainerBook(object form)
         {
             if (this.pnlContainerFmAddOrUpdateBook.Controls.Count > 0)
@@ -53,6 +66,18 @@ namespace Bookstore.Forms
             this.pnlContainerFmAddOrUpdateBook.Controls.Add(fh);
             this.pnlContainerFmAddOrUpdateBook.Tag = fh;
             fh.Show();
+        }
+
+        public void refreshForm()
+        {
+            this.Refresh();
+        }
+
+        private void btnAddNewBook_Click(object sender, EventArgs e)
+        {
+            openInPanelContainerBook(new FmAddOrUpdateBook());
+            fmAdd.setTitle("Add a new Book");
+            //this.disableButtonsBooks();
         }
     }
 }

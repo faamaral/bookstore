@@ -78,16 +78,23 @@ namespace Bookstore.Forms
         //{
         //    this.Close();
         //}
-
+        public void enableButtosFMBooks()
+        {
+            FmBooks fmBooks = new FmBooks();
+        }
         private void btnCancelbook_Click(object sender, EventArgs e)
         {
+            //FmBooks fmBooks = new FmBooks();
             this.Close();
+            //fmBooks.ValidaEnableButtons();
+            //fmBooks.refreshForm();
+            
         }
 
         private void txtYearBook_KeyPress(object sender, KeyPressEventArgs e)
         {
             //Se a tecla digitada não for número e nem backspace
-            if (!char.IsDigit(e.KeyChar) && e.KeyChar != 08)
+            if (!char.IsDigit(e.KeyChar) && e.KeyChar != 08 && e.KeyChar != 09)
             {
                 //Atribui True no Handled para cancelar o evento
                 e.Handled = true;
@@ -120,10 +127,35 @@ namespace Bookstore.Forms
 
         private void btnSaveBook_Click(object sender, EventArgs e)
         {
-            FmBooks fmBooks = new FmBooks();
-            bookControl.insertBooksControl(mtxtISBN.Text, txtTitleBook.Text,txtAuthorBook.Text, txtYearBook.Text,txteditoraBook.Text,cbGenreBook.SelectedItem.ToString(),txtAmountBook.Text,txtPriceBook.Text);
-            fmBooks.Refresh();
-            this.Close();
+            try
+            {
+                FmBooks fmBooks = new FmBooks();
+                if (cbGenreBook.Text.Equals("Select the  book genre:") && cbGenreBook.SelectedIndex < 0)
+                {
+                    MessageBox.Show("Please, select a genre the book!");
+                    cbGenreBook.Focus();
+                }
+                else
+                {
+                    if (bookControl.checkISBNControl(mtxtISBN.Text))
+                    {
+                        MessageBox.Show("This ISBN has existed in our database");
+                        mtxtISBN.Clear();
+                        mtxtISBN.Focus();
+                    }
+                    else
+                    {
+                        bookControl.insertBooksControl(mtxtISBN.Text, txtTitleBook.Text, txtAuthorBook.Text, txtYearBook.Text, txteditoraBook.Text, cbGenreBook.SelectedItem.ToString(), txtAmountBook.Text, txtPriceBook.Text);
+                        fmBooks.refreshForm();
+                        this.Close();
+                        //fmBooks.ValidaEnableButtons();
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
         }
     }
 }

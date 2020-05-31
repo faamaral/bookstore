@@ -4,6 +4,7 @@ using System.Data;
 using System.Data.SqlServerCe;
 using System.Linq;
 using System.Text;
+using System.Windows.Forms;
 
 namespace Bookstore.Database
 {
@@ -31,6 +32,38 @@ namespace Bookstore.Database
                 throw e;
             }
             
+        }
+
+        public bool checkISBN(string v)
+        {
+            try
+            {
+                conn.openDB();
+                string query = "SELECT * FROM books_stoke WHERE book_isbn = '"+v+"'";
+                SqlCeCommand command = new SqlCeCommand();
+                command.CommandText = query;
+                SqlCeDataAdapter dataAdapter = new SqlCeDataAdapter(query, conn.objConnection);
+                DataTable dataTable = new DataTable();
+                dataAdapter.Fill(dataTable);
+                dataAdapter.Dispose();
+                conn.closeDB();
+
+                if (dataTable.Rows.Count == 0)
+                {
+                    return false;
+                }
+                else
+                {
+                    return true;
+                }
+                
+                
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show("Error has ocurred" + e);
+            }
+            return false;
         }
 
         public void insertNewBook(string isbn, string title, string author, int year, string editora, string genre, int amount, decimal price)

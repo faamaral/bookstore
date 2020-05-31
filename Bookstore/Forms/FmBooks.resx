@@ -212,7 +212,7 @@
         xgwAAAAASUVORK5CYII=
 </value>
   </data>
-  <data name="button3.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="btnUpdateData.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGPC/xhBQAAAd5JREFUWEft
         lrtKA0EUhoOovYWIdxsR7PQ9vHaCT+AFES+VryH2io0KomIh+B4KFtZxnZmNySbeYvx//VeCqDu7hdV+
@@ -226,7 +226,7 @@
         AAAASUVORK5CYII=
 </value>
   </data>
-  <data name="button2.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="btnSearchBook.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGPC/xhBQAAAfpJREFUWEft
         VslKA0EQjWsEFTzoxT9w+Q3Fg4K4oKBncQfxE/SmoJ+gB8GD/ohHF1ww5mjION0wk0RUcHw1vogbpnsm
@@ -240,7 +240,7 @@
         58PinxbcnwLFZytWvIq/RyLxAgSb8nAle7qTAAAAAElFTkSuQmCC
 </value>
   </data>
-  <data name="button1.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="btnAddNewBook.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGPC/xhBQAAAHpJREFUWEft
         jjEKwDAMA/3/x2br3C6uphgpoEJSfKDFSIejabbkGuP+IqnnzMaOpJ6zPCD0A/99wN0DbrHaA26x2gNu

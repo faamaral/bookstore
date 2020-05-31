@@ -8,10 +8,11 @@ namespace Bookstore.Database
 {
     public class BookControl
     {
-        private BookQueries bookQuery = new BookQueries();
+        BookQueries bookQuery = new BookQueries();
 
         public DataTable showBooks()
         {
+            BookQueries bookQuery = new BookQueries();
             DataTable data = new DataTable();
             data = bookQuery.showData();
             return data;
@@ -20,6 +21,20 @@ namespace Bookstore.Database
         public void insertBooksControl(string isbn, string title, string author, string year, string editora, string genre, string amount, string price)
         {
             bookQuery.insertNewBook(isbn, title, author, Convert.ToInt32(year), editora, genre, Convert.ToInt32(amount), Convert.ToDecimal(price));
+        }
+
+        public bool checkISBNControl(string v)
+        {
+            if(bookQuery.checkISBN(v)== false)
+            {
+                // ainda não existe no banco de dados
+                return false;
+            }
+            else
+            {
+                //Existe no banco de dados
+                return true;
+            }
         }
     }
 }
