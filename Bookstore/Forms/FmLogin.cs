@@ -165,13 +165,7 @@ namespace Bookstore.Forms
 			}
 		}
 
-		private bool saveLogin(bool mark)
-		{
-			if(mark)
-			{
-				
-			}
-		}
+		
 
 		private void txtPassword_Leave(object sender, EventArgs e)
 		{

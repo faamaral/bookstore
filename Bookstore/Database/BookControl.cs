@@ -23,6 +23,12 @@ namespace Bookstore.Database
             bookQuery.insertNewBook(isbn, title, author, Convert.ToInt32(year), editora, genre, Convert.ToInt32(amount), Convert.ToDecimal(price));
         }
 
+        public string updateDataControl(string id, string isbn, string title, string author, string year, string editora, string genre, string amount, string price)
+        {
+            string str = bookQuery.updateData(Convert.ToInt32(id), isbn, title, author, Convert.ToInt32(year), editora, genre, Convert.ToInt32(amount), Convert.ToDecimal(price));
+            return str;
+        }
+
         public bool checkISBNControl(string v)
         {
             if(bookQuery.checkISBN(v)== false)

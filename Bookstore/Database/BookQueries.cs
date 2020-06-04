@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlServerCe;
 using System.Linq;
+using System.Runtime.Remoting.Messaging;
 using System.Text;
 using System.Windows.Forms;
 
@@ -32,6 +33,25 @@ namespace Bookstore.Database
                 throw e;
             }
             
+        }
+
+        public DataTable showDataSearch(string isbn)
+        {
+            try
+            {
+                conn.openDB();
+                string query = "SELECT * FROM books_stoke WHERE book_isbn = '" + isbn + "'";
+                command = new SqlCeCommand(query, conn.objConnection);
+                read = command.ExecuteReader();
+                dataTable.Load(read);
+                conn.closeDB();
+                return dataTable;
+            }
+            catch (Exception e)
+            {
+                throw e;
+            }
+
         }
 
         public bool checkISBN(string v)
@@ -82,6 +102,42 @@ namespace Bookstore.Database
             {
                 throw e;
             }
+        }
+
+        public string updateData(int id,string isbn, string title, string author, int year, string editora, string genre, int amount, decimal price)
+        {
+            string result= "";
+            try
+            {
+                string query = "UPDATE books_stoke SET book_title=@title, book_author=@author, book_year=@year, book_editora=@editora, book_genre=@genre, book_amount=@amount, book_price=@price WHERE book_id = @id AND book_isbn=@isbn";
+                conn.openDB();
+                command = new SqlCeCommand(query, conn.objConnection);
+                command.Parameters.AddWithValue("@id", id);
+                command.Parameters.AddWithValue("@isbn",isbn);
+                command.Parameters.AddWithValue("@title", title);
+                command.Parameters.AddWithValue("@author", author);
+                command.Parameters.AddWithValue("@year", year);
+                command.Parameters.AddWithValue("@editora", editora);
+                command.Parameters.AddWithValue("@genre", genre);
+                command.Parameters.AddWithValue("@amount", amount);
+                command.Parameters.AddWithValue("@price", price);
+
+                command.CommandType = CommandType.Text;
+                int i = command.ExecuteNonQuery();
+                if (i > 0)
+                {
+                    result = "sucess";
+                }
+
+                conn.closeDB();
+                return result;
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show("Erro: "+e.ToString());
+            }
+            return result;
+            
         }
     }
 }
