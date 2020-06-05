@@ -9,7 +9,9 @@
 using Bookstore.Database;
 using System;
 using System.Drawing;
+using System.Linq;
 using System.Threading;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Bookstore.Forms
@@ -32,6 +34,8 @@ namespace Bookstore.Forms
 			InitializeComponent();
 			// Inicia o form no centro da tela de login
 			form.StartPosition = FormStartPosition.CenterParent;
+			txtEmail.Focus();
+			txtEmail.Select(0,0);
 //			removeBackground(pbEmail, pbIconEmail);
 //			removeBackground(pbPassword, pbIconPassword);
 			
@@ -104,6 +108,81 @@ namespace Bookstore.Forms
 				{
 						MessageBox.Show("Usuario Invalido!! \nOu senha incorreta");
 				}
+			}
+		}
+
+		private void txtPassword_Enter(object sender, EventArgs e)
+		{
+			if (txtPassword.Text.Equals("Type here your password"))
+			{
+				txtPassword.Clear();
+			}
+			
+			//txtPassword.PasswordChar = '*';
+		}
+
+		private void txtEmail_Enter(object sender, EventArgs e)
+		{
+			if (txtEmail.Text.Equals("Type here your e-mail address"))
+			{
+				
+				
+
+				//txtEmail.Clear();
+			}
+		}
+
+		private void txtEmail_Click(object sender, EventArgs e)
+		{
+			if (txtEmail.Text.Equals("Type here your e-mail address"))
+			{
+				txtEmail.Clear();
+			}
+		}
+
+		private void txtEmail_KeyPress(object sender, KeyPressEventArgs e)
+		{
+			if (txtEmail.Text.Equals("Type here your e-mail address"))
+			{
+				txtEmail.Clear();
+			}
+		}
+
+		private void txtPassword_KeyPress(object sender, KeyPressEventArgs e)
+		{
+			if (txtPassword.Text.Equals("Type here your password"))
+			{
+				txtPassword.Clear();
+			}
+			txtPassword.PasswordChar = '*';
+		}
+
+		private void txtEmail_Leave(object sender, EventArgs e)
+		{
+			if(txtEmail.Text.Equals(""))
+			{
+				txtEmail.Text = "Type here your e-mail address";
+			}
+		}
+
+		
+
+		private void txtPassword_Leave(object sender, EventArgs e)
+		{
+			if (txtPassword.Text.Equals(""))
+			{
+				if(txtPassword.PasswordChar.Equals('*'))
+				{
+					txtPassword.PasswordChar = '\0';
+					txtPassword.Text = "Type here your password";
+				}
+				else
+				{
+					txtPassword.Text = "Type here your password";
+				}
+				
+				//txtPassword.ResetText();
+				
 			}
 		}
 	}

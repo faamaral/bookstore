@@ -18,9 +18,16 @@ namespace Bookstore.Database
             return data;
         }
 
-        public void insertBooksControl(string isbn, string title, string author, string year, string editora, string genre, string amount, string price)
+        public string insertBooksControl(string isbn, string title, string author, string year, string editora, string genre, string amount, string price)
         {
-            bookQuery.insertNewBook(isbn, title, author, Convert.ToInt32(year), editora, genre, Convert.ToInt32(amount), Convert.ToDecimal(price));
+            string result = bookQuery.insertNewBook(isbn, title, author, Convert.ToInt32(year), editora, genre, Convert.ToInt32(amount), Convert.ToDecimal(price));
+            return result;
+        }
+
+        public string updateDataControl(string id, string isbn, string title, string author, string year, string editora, string genre, string amount, string price)
+        {
+            string str = bookQuery.updateData(Convert.ToInt32(id), isbn, title, author, Convert.ToInt32(year), editora, genre, Convert.ToInt32(amount), Convert.ToDecimal(price));
+            return str;
         }
 
         public bool checkISBNControl(string v)
@@ -36,5 +43,12 @@ namespace Bookstore.Database
                 return true;
             }
         }
+        public string deleteDataControl(string isbn)
+        {
+            string result = bookQuery.deleteData(isbn);
+            return result;
+        }
+
+
     }
 }
