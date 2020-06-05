@@ -61,13 +61,15 @@
             this.btnUpdateData = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.dgvBooks = new System.Windows.Forms.DataGridView();
-            this.maskedTextBox1 = new System.Windows.Forms.MaskedTextBox();
+            this.pnlSearchBook = new System.Windows.Forms.Panel();
+            this.txtFilterData = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.pbCloseFmBooks)).BeginInit();
             this.pnlButtosBooks.SuspendLayout();
             this.pnlContainerFmAddOrUpdateBook.SuspendLayout();
             this.pnlTopFmAddBook.SuspendLayout();
             this.pnlBooksGrid.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvBooks)).BeginInit();
+            this.pnlSearchBook.SuspendLayout();
             this.SuspendLayout();
             // 
             // pbCloseFmBooks
@@ -362,7 +364,7 @@
             this.btnAddNewBook.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAddNewBook.ForeColor = System.Drawing.Color.White;
             this.btnAddNewBook.Image = ((System.Drawing.Image)(resources.GetObject("btnAddNewBook.Image")));
-            this.btnAddNewBook.Location = new System.Drawing.Point(164, 73);
+            this.btnAddNewBook.Location = new System.Drawing.Point(164, 59);
             this.btnAddNewBook.Name = "btnAddNewBook";
             this.btnAddNewBook.Size = new System.Drawing.Size(186, 47);
             this.btnAddNewBook.TabIndex = 0;
@@ -381,7 +383,7 @@
             this.btnSearchBook.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSearchBook.ForeColor = System.Drawing.Color.White;
             this.btnSearchBook.Image = ((System.Drawing.Image)(resources.GetObject("btnSearchBook.Image")));
-            this.btnSearchBook.Location = new System.Drawing.Point(352, 94);
+            this.btnSearchBook.Location = new System.Drawing.Point(437, 36);
             this.btnSearchBook.Name = "btnSearchBook";
             this.btnSearchBook.Size = new System.Drawing.Size(47, 35);
             this.btnSearchBook.TabIndex = 1;
@@ -391,13 +393,11 @@
             // 
             // pnlBooksGrid
             // 
-            this.pnlBooksGrid.Controls.Add(this.maskedTextBox1);
             this.pnlBooksGrid.Controls.Add(this.btnDeleteBook);
             this.pnlBooksGrid.Controls.Add(this.btnUpdateData);
-            this.pnlBooksGrid.Controls.Add(this.label1);
             this.pnlBooksGrid.Controls.Add(this.dgvBooks);
             this.pnlBooksGrid.Controls.Add(this.pbCloseFmBooks);
-            this.pnlBooksGrid.Controls.Add(this.btnSearchBook);
+            this.pnlBooksGrid.Controls.Add(this.pnlSearchBook);
             this.pnlBooksGrid.Dock = System.Windows.Forms.DockStyle.Right;
             this.pnlBooksGrid.Location = new System.Drawing.Point(528, 0);
             this.pnlBooksGrid.Name = "pnlBooksGrid";
@@ -406,6 +406,8 @@
             // 
             // btnDeleteBook
             // 
+            this.btnDeleteBook.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.btnDeleteBook.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(60)))), ((int)(((byte)(152)))));
             this.btnDeleteBook.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnDeleteBook.FlatAppearance.BorderSize = 0;
@@ -414,16 +416,19 @@
             this.btnDeleteBook.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDeleteBook.ForeColor = System.Drawing.Color.White;
             this.btnDeleteBook.Image = ((System.Drawing.Image)(resources.GetObject("btnDeleteBook.Image")));
-            this.btnDeleteBook.Location = new System.Drawing.Point(271, 439);
+            this.btnDeleteBook.Location = new System.Drawing.Point(280, 507);
             this.btnDeleteBook.Name = "btnDeleteBook";
             this.btnDeleteBook.Size = new System.Drawing.Size(154, 69);
             this.btnDeleteBook.TabIndex = 6;
             this.btnDeleteBook.Text = "Delete";
             this.btnDeleteBook.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnDeleteBook.UseVisualStyleBackColor = false;
+            this.btnDeleteBook.Click += new System.EventHandler(this.btnDeleteBook_Click);
             // 
             // btnUpdateData
             // 
+            this.btnUpdateData.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.btnUpdateData.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(102)))), ((int)(((byte)(85)))));
             this.btnUpdateData.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnUpdateData.FlatAppearance.BorderSize = 0;
@@ -432,7 +437,7 @@
             this.btnUpdateData.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnUpdateData.ForeColor = System.Drawing.Color.White;
             this.btnUpdateData.Image = ((System.Drawing.Image)(resources.GetObject("btnUpdateData.Image")));
-            this.btnUpdateData.Location = new System.Drawing.Point(63, 439);
+            this.btnUpdateData.Location = new System.Drawing.Point(63, 507);
             this.btnUpdateData.Name = "btnUpdateData";
             this.btnUpdateData.Size = new System.Drawing.Size(154, 69);
             this.btnUpdateData.TabIndex = 5;
@@ -445,7 +450,8 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(163, 49);
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(175, 10);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(145, 21);
             this.label1.TabIndex = 4;
@@ -453,6 +459,9 @@
             // 
             // dgvBooks
             // 
+            this.dgvBooks.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvBooks.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dgvBooks.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dgvBooks.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(144)))), ((int)(((byte)(12)))), ((int)(((byte)(63)))));
@@ -483,18 +492,40 @@
             this.dgvBooks.ReadOnly = true;
             this.dgvBooks.RowHeadersVisible = false;
             this.dgvBooks.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvBooks.Size = new System.Drawing.Size(497, 275);
+            this.dgvBooks.Size = new System.Drawing.Size(497, 349);
             this.dgvBooks.TabIndex = 2;
             // 
-            // maskedTextBox1
+            // pnlSearchBook
             // 
-            this.maskedTextBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.maskedTextBox1.Font = new System.Drawing.Font("Century Gothic", 14F);
-            this.maskedTextBox1.Location = new System.Drawing.Point(130, 100);
-            this.maskedTextBox1.Mask = "ISBN 000-&&&&&&&&&-0";
-            this.maskedTextBox1.Name = "maskedTextBox1";
-            this.maskedTextBox1.Size = new System.Drawing.Size(207, 23);
-            this.maskedTextBox1.TabIndex = 33;
+            this.pnlSearchBook.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.pnlSearchBook.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(87)))), ((int)(((byte)(51)))));
+            this.pnlSearchBook.Controls.Add(this.txtFilterData);
+            this.pnlSearchBook.Controls.Add(this.btnSearchBook);
+            this.pnlSearchBook.Controls.Add(this.label1);
+            this.pnlSearchBook.Location = new System.Drawing.Point(13, 49);
+            this.pnlSearchBook.Name = "pnlSearchBook";
+            this.pnlSearchBook.Size = new System.Drawing.Size(497, 80);
+            this.pnlSearchBook.TabIndex = 7;
+            // 
+            // txtFilterData
+            // 
+            this.txtFilterData.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtFilterData.BackColor = System.Drawing.Color.Beige;
+            this.txtFilterData.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtFilterData.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtFilterData.Location = new System.Drawing.Point(50, 43);
+            this.txtFilterData.MaxLength = 50;
+            this.txtFilterData.Name = "txtFilterData";
+            this.txtFilterData.Size = new System.Drawing.Size(371, 20);
+            this.txtFilterData.TabIndex = 5;
+            this.txtFilterData.Text = "Type here the book title";
+            this.txtFilterData.TextChanged += new System.EventHandler(this.txtFilterData_TextChanged);
+            this.txtFilterData.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtFilterData_KeyPress);
+            this.txtFilterData.Leave += new System.EventHandler(this.txtFilterData_Leave);
             // 
             // FmBooks
             // 
@@ -514,8 +545,9 @@
             this.pnlTopFmAddBook.ResumeLayout(false);
             this.pnlTopFmAddBook.PerformLayout();
             this.pnlBooksGrid.ResumeLayout(false);
-            this.pnlBooksGrid.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvBooks)).EndInit();
+            this.pnlSearchBook.ResumeLayout(false);
+            this.pnlSearchBook.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -551,6 +583,7 @@
         private System.Windows.Forms.Label lblTitleAddBook;
         private System.Windows.Forms.Button btnDeleteBook;
         private System.Windows.Forms.Button btnUpdateData;
-        private System.Windows.Forms.MaskedTextBox maskedTextBox1;
+        private System.Windows.Forms.Panel pnlSearchBook;
+        private System.Windows.Forms.TextBox txtFilterData;
     }
 }

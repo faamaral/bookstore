@@ -86,22 +86,29 @@ namespace Bookstore.Database
             return false;
         }
 
-        public void insertNewBook(string isbn, string title, string author, int year, string editora, string genre, int amount, decimal price)
+        public string insertNewBook(string isbn, string title, string author, int year, string editora, string genre, int amount, decimal price)
         {
+            string result="";
             try
             {
                 string query = "insert into books_stoke(book_isbn, book_title, book_author, book_year, book_editora, book_genre, book_amount, book_price)" +
                     "values ('" + isbn + "','" + title + "', '" + author + "', " + year + ", '" + editora + "', '" + genre + "', " + amount + ", " + price + ")";
                 conn.openDB();
                 command = new SqlCeCommand(query, conn.objConnection);
-                command.ExecuteNonQuery();
-
+                int i = command.ExecuteNonQuery();
                 conn.closeDB();
+                if (i > 0)
+                {
+                    result = "sucess";
+                    return result;
+                }
+                
             }
             catch(Exception e)
             {
                 throw e;
             }
+            return result;
         }
 
         public string updateData(int id,string isbn, string title, string author, int year, string editora, string genre, int amount, decimal price)
@@ -124,13 +131,15 @@ namespace Bookstore.Database
 
                 command.CommandType = CommandType.Text;
                 int i = command.ExecuteNonQuery();
+                conn.closeDB();
                 if (i > 0)
                 {
                     result = "sucess";
+                    return result;
                 }
 
-                conn.closeDB();
-                return result;
+                
+                
             }
             catch (Exception e)
             {
@@ -139,5 +148,36 @@ namespace Bookstore.Database
             return result;
             
         }
+
+        public string deleteData(string isbn)
+        {
+            string result = "";
+            try
+            {
+                string query = "DELETE FROM books_stoke WHERE book_isbn = @isbn";
+                conn.openDB();
+                command = new SqlCeCommand(query, conn.objConnection);
+                command.Parameters.AddWithValue("@isbn",isbn);
+                command.CommandType = CommandType.Text;
+                int i = command.ExecuteNonQuery();
+                conn.closeDB();
+                command.Parameters.Clear();
+
+                if (i > 0)
+                {
+                    result = "sucess";
+                    return result;
+                }
+                
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show("Error: "+e.ToString());
+            }
+
+            return result;
+        }
     }
 }
+
+

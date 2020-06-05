@@ -210,13 +210,20 @@ namespace Bookstore.Forms
                     {
                         if (lblTitleAddBook.Text.Equals("Add a new book"))
                         {
-                            bookControl.insertBooksControl(mtxtISBN.Text, txtTitleBook.Text, txtAuthorBook.Text, txtYearBook.Text, txteditoraBook.Text, cbGenreBook.SelectedItem.ToString(), txtAmountBook.Text, txtPriceBook.Text);
-
+                            string result = bookControl.insertBooksControl(mtxtISBN.Text, txtTitleBook.Text, txtAuthorBook.Text, txtYearBook.Text, txteditoraBook.Text, cbGenreBook.SelectedItem.ToString(), txtAmountBook.Text, txtPriceBook.Text);
+                            if (result.Equals("sucess"))
+                            {
+                                clearAddNewTextBox();
+                                panelAddVisible(false);
+                                lblTitleAddBook.Text = "";
+                                showBooksInDataGrid();
+                            }
+                            else
+                            {
+                                MessageBox.Show("Error: its not possible add a book!");
+                            }
                             //this.Refresh();
-                            clearAddNewTextBox();
-                            panelAddVisible(false);
-                            lblTitleAddBook.Text = "";
-                            showBooksInDataGrid();
+                            
 
                             //fmBooks.refreshForm();
                             //this.Close();
@@ -289,6 +296,68 @@ namespace Bookstore.Forms
             catch (Exception ex)
             {
                 throw ex;
+            }
+        }
+
+        private void btnDeleteBook_Click(object sender, EventArgs e)
+        {
+
+            if (dgvBooks.SelectedRows.Count > 0)
+            {
+                string isbn = dgvBooks.CurrentRow.Cells["book_isbn"].Value.ToString();
+                
+                
+                if (MessageBox.Show("Do you really want to delete these data?", "Alert", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
+                {
+                    string result = bookControl.deleteDataControl(isbn);
+                    if (result.Equals("sucess"))
+                    {
+                        MessageBox.Show("Delete data has been sucessed!");
+                        showBooksInDataGrid();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Delete data it was possible!");
+                    }
+                }
+
+            }
+        }
+
+        private void txtFilterData_TextChanged(object sender, EventArgs e)
+        {
+
+            //var termo = (sender as TextBox).Text.ToLowerInvariant();
+            //bool semTermo = String.IsNullOrEmpty(termo);
+
+            //foreach (DataGridViewRow linha in dgvBooks.Rows)
+            //{
+            //    if ((linha.Cells[COL_NOME.Index].Value as string).ToLowerInvariant().Contains(termo) || semTermo)
+            //        linha.Visible = true;
+            //    else
+            //        linha.Visible = false;
+            //}
+            if (!txtFilterData.Text.Equals("Type here the book title"))
+            {
+                (dgvBooks.DataSource as DataTable).DefaultView.RowFilter =
+                string.Format("book_title LIKE '{0}%' OR book_title LIKE '% {0}%'", txtFilterData.Text);
+            }
+            
+        }
+
+        private void txtFilterData_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (txtFilterData.Text.Equals("Type here the book title"))
+            {
+                txtFilterData.Clear();
+            }
+        }
+
+        private void txtFilterData_Leave(object sender, EventArgs e)
+        {
+            if (txtFilterData.Text.Equals(""))
+            {
+                txtFilterData.Text = "Type here the book title";
             }
         }
     }
