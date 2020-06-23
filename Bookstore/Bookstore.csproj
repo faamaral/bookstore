@@ -89,11 +89,12 @@
     <Compile Include="Database\BookQueries.cs" />
     <Compile Include="Database\ConnectionSQLserverCE.cs" />
     <Compile Include="Database\crudUsers.cs" />
-    <Compile Include="Forms\FmAddOrUpdateBook.cs">
+    <Compile Include="Database\SaleControl.cs" />
+    <Compile Include="Forms\FmAbout.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\FmAddOrUpdateBook.Designer.cs">
-      <DependentUpon>FmAddOrUpdateBook.cs</DependentUpon>
+    <Compile Include="Forms\FmAbout.Designer.cs">
+      <DependentUpon>FmAbout.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\FmBooks.cs">
       <SubType>Form</SubType>
@@ -125,6 +126,12 @@
     <Compile Include="Forms\FmRegister.Designer.cs">
       <DependentUpon>FmRegister.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\FmSale.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FmSale.Designer.cs">
+      <DependentUpon>FmSale.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
@@ -132,6 +139,8 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <Compile Include="Utils\SaleProd.cs" />
+    <Compile Include="Utils\UserLogged.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
@@ -151,12 +160,10 @@
     <None Include="Assets\fotoLogin.png" />
     <None Include="packages.config" />
   </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
-    <Folder Include="Utils\" />
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="Forms\FmAddOrUpdateBook.resx">
-      <DependentUpon>FmAddOrUpdateBook.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\FmAbout.resx">
+      <DependentUpon>FmAbout.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\FmBooks.resx">
       <DependentUpon>FmBooks.cs</DependentUpon>
@@ -173,6 +180,9 @@
     <EmbeddedResource Include="Forms\FmRegister.resx">
       <DependentUpon>FmRegister.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Fmsale.resx">
+      <DependentUpon>FmSale.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -186,6 +196,7 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Assets\iconApp.ico" />
     <Content Include="Assets\iconLogoDash.png" />
     <Content Include="Assets\iconMenu.png" />
     <Content Include="Assets\iconMinimize.png" />
@@ -198,6 +209,11 @@
     <Content Include="Assets\iconAddNew.png" />
     <Content Include="Assets\iconCancel.png" />
     <Content Include="Assets\iconDelete.png" />
+    <Content Include="Assets\iconCheckmark.png" />
+    <Content Include="Assets\iconFacebook.png" />
+    <Content Include="Assets\iconInstagram.png" />
+    <Content Include="Assets\iconGithub.png" />
+    <Content Include="Assets\iconTwitter.png" />
     <Content Include="Assets\iconSave.png" />
     <Content Include="Assets\iconUpdate.png" />
     <Content Include="Assets\iconSearch.png" />

@@ -25,6 +25,8 @@ namespace Bookstore.Forms
 			// The InitializeComponent() call is required for Windows Forms designer support.
 			//
 			InitializeComponent();
+			txtNameRegister.Focus();
+			txtNameRegister.Select(0,0);
 			
 			//
 			// TODO: Add constructor code after the InitializeComponent() call.
@@ -94,18 +96,15 @@ namespace Bookstore.Forms
 		}
 		void TxtNameRegisterClick(object sender, EventArgs e)
 		{
-			if(txtNameRegister.Text.Equals("TYPE HERE YOUR FULL NAME"))
-			{
-				txtNameRegister.Clear();
-			}
+			//if(txtNameRegister.Text.Equals("TYPE HERE YOUR FULL NAME"))
+			//{
+			//	txtNameRegister.Clear();
+			//}
 		}
 		void TxtEmailRegisterClick(object sender, EventArgs e)
 		{
 			
-			if(txtEmailRegister.Text.Equals("Type here your e-mail address"))
-			{
-				txtEmailRegister.Clear();
-			}
+			
 		}
 		
 		
@@ -133,17 +132,17 @@ namespace Bookstore.Forms
 		}
 		void TxtPasswordRegisterClick(object sender, EventArgs e)
 		{
-			if(checkText(txtPasswordRegister.Text))
-			{
-				txtPasswordRegister.Clear();
-			}
+			//if(checkText(txtPasswordRegister.Text))
+			//{
+			//	txtPasswordRegister.Clear();
+			//}
 		}
 		void TxtConfirmPasswordClick(object sender, EventArgs e)
 		{
-			if(checkText(txtConfirmPassword.Text))
-			{
-				txtConfirmPassword.Clear();
-			}
+			//if(checkText(txtConfirmPassword.Text))
+			//{
+			//	txtConfirmPassword.Clear();
+			//}
 		}
 
 		private void FmRegister_Load(object sender, EventArgs e)
@@ -157,6 +156,96 @@ namespace Bookstore.Forms
 		private void cbFunctionUser_KeyPress(object sender, KeyPressEventArgs e)
 		{
 			e.Handled = true;
+		}
+
+		private void pbRegisterNowRegoster_MouseDown(object sender, MouseEventArgs e)
+		{
+			pbRegisterNowRegoster.Width = pbRegisterNowRegoster.Width - 2;
+			pbRegisterNowRegoster.Width -= 2;
+		}
+
+		private void txtNameRegister_KeyPress(object sender, KeyPressEventArgs e)
+		{
+			if (txtNameRegister.Text.Equals("TYPE HERE YOUR FULL NAME"))
+			{
+				txtNameRegister.Clear();
+			}
+		}
+
+		private void txtNameRegister_Leave(object sender, EventArgs e)
+		{
+			if (txtNameRegister.Text.Equals(""))
+				txtNameRegister.Text = "TYPE HERE YOUR FULL NAME";
+		}
+
+		private void txtEmailRegister_KeyPress(object sender, KeyPressEventArgs e)
+		{
+			if (txtEmailRegister.Text.Equals("Type here your e-mail address"))
+			{
+				txtEmailRegister.Clear();
+			}
+		}
+
+		private void txtEmailRegister_Leave(object sender, EventArgs e)
+		{
+			if (txtEmailRegister.Text.Equals(""))
+				txtEmailRegister.Text = "Type here your e-mail address";
+		}
+
+		private void txtPasswordRegister_KeyPress(object sender, KeyPressEventArgs e)
+		{
+			if (txtPasswordRegister.Text.Equals("Type here your password"))
+			{
+				txtPasswordRegister.Clear();
+			}
+			txtPasswordRegister.PasswordChar = '*';
+		}
+
+		private void txtPasswordRegister_Leave(object sender, EventArgs e)
+		{
+			if (txtPasswordRegister.Text.Equals(""))
+			{
+				if (txtPasswordRegister.PasswordChar.Equals('*'))
+				{
+					txtPasswordRegister.PasswordChar = '\0';
+					txtPasswordRegister.Text = "Type here your password";
+				}
+				else
+				{
+					txtPasswordRegister.Text = "Type here your password";
+				}
+
+				//txtPassword.ResetText();
+
+			}
+		}
+
+		private void txtConfirmPassword_Leave(object sender, EventArgs e)
+		{
+			if (txtConfirmPassword.Text.Equals(""))
+			{
+				if (txtConfirmPassword.PasswordChar.Equals('*'))
+				{
+					txtConfirmPassword.PasswordChar = '\0';
+					txtConfirmPassword.Text = "Repeat your password";
+				}
+				else
+				{
+					txtConfirmPassword.Text = "Repeat your password";
+				}
+
+				//txtPassword.ResetText();
+
+			}
+		}
+
+		private void txtConfirmPassword_KeyPress(object sender, KeyPressEventArgs e)
+		{
+			if (txtConfirmPassword.Text.Equals("Repeat your password"))
+			{
+				txtConfirmPassword.Clear();
+			}
+			txtConfirmPassword.PasswordChar = '*';
 		}
 
 

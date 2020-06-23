@@ -14,7 +14,7 @@ namespace Bookstore.Forms
     {
         private string titleLabel;
         private string id = null;
-        FmAddOrUpdateBook fmAdd = new FmAddOrUpdateBook();
+        //FmAddOrUpdateBook fmAdd = new FmAddOrUpdateBook();
 
         BookControl bookControl = new BookControl();
         public FmBooks()
@@ -359,6 +359,16 @@ namespace Bookstore.Forms
             {
                 txtFilterData.Text = "Type here the book title";
             }
+        }
+
+        private void txtAmountBook_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pbCloseFmBooks_Click(object sender, EventArgs e)
+        {
+            
         }
     }
 }

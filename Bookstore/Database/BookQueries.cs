@@ -56,6 +56,7 @@ namespace Bookstore.Database
 
         public bool checkISBN(string v)
         {
+            bool exists = false;
             try
             {
                 conn.openDB();
@@ -70,11 +71,11 @@ namespace Bookstore.Database
 
                 if (dataTable.Rows.Count == 0)
                 {
-                    return false;
+                    exists = false;
                 }
                 else
                 {
-                    return true;
+                    exists = true;
                 }
                 
                 
@@ -83,7 +84,7 @@ namespace Bookstore.Database
             {
                 MessageBox.Show("Error has ocurred" + e);
             }
-            return false;
+            return exists;
         }
 
         public string insertNewBook(string isbn, string title, string author, int year, string editora, string genre, int amount, decimal price)

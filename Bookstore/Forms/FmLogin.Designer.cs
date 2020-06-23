@@ -22,7 +22,7 @@ namespace Bookstore.Forms
 		private System.Windows.Forms.TextBox txtEmail;
 		private System.Windows.Forms.TextBox txtPassword;
 		private System.Windows.Forms.CheckBox cbLembrarSenha;
-		private System.Windows.Forms.PictureBox pictureBox5;
+		private System.Windows.Forms.PictureBox pbEnterLogin;
 		private System.Windows.Forms.Label label2;
 		private System.Windows.Forms.Label lblRegister;
 		private System.Windows.Forms.PictureBox pbIconEmail;
@@ -59,7 +59,7 @@ namespace Bookstore.Forms
             this.txtEmail = new System.Windows.Forms.TextBox();
             this.txtPassword = new System.Windows.Forms.TextBox();
             this.cbLembrarSenha = new System.Windows.Forms.CheckBox();
-            this.pictureBox5 = new System.Windows.Forms.PictureBox();
+            this.pbEnterLogin = new System.Windows.Forms.PictureBox();
             this.label2 = new System.Windows.Forms.Label();
             this.lblRegister = new System.Windows.Forms.Label();
             this.pbIconEmail = new System.Windows.Forms.PictureBox();
@@ -69,7 +69,7 @@ namespace Bookstore.Forms
             ((System.ComponentModel.ISupportInitialize)(this.pbIconUser)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbEmail)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbPassword)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbEnterLogin)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbIconEmail)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbIconPassword)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbCloseLogin)).BeginInit();
@@ -154,6 +154,7 @@ namespace Bookstore.Forms
             this.txtPassword.TabIndex = 6;
             this.txtPassword.Text = "Type here your password";
             this.txtPassword.Enter += new System.EventHandler(this.txtPassword_Enter);
+            this.txtPassword.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtPassword_KeyDown);
             this.txtPassword.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPassword_KeyPress);
             this.txtPassword.Leave += new System.EventHandler(this.txtPassword_Leave);
             // 
@@ -168,18 +169,19 @@ namespace Bookstore.Forms
             this.cbLembrarSenha.UseVisualStyleBackColor = true;
             this.cbLembrarSenha.Visible = false;
             // 
-            // pictureBox5
+            // pbEnterLogin
             // 
-            this.pictureBox5.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBox5.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox5.Image")));
-            this.pictureBox5.Location = new System.Drawing.Point(334, 276);
-            this.pictureBox5.Name = "pictureBox5";
-            this.pictureBox5.Size = new System.Drawing.Size(234, 60);
-            this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox5.TabIndex = 8;
-            this.pictureBox5.TabStop = false;
-            this.pictureBox5.Click += new System.EventHandler(this.pictureBox5_Click);
-            this.pictureBox5.MouseHover += new System.EventHandler(this.PictureBox5MouseHover);
+            this.pbEnterLogin.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pbEnterLogin.Image = ((System.Drawing.Image)(resources.GetObject("pbEnterLogin.Image")));
+            this.pbEnterLogin.Location = new System.Drawing.Point(334, 276);
+            this.pbEnterLogin.Name = "pbEnterLogin";
+            this.pbEnterLogin.Size = new System.Drawing.Size(234, 60);
+            this.pbEnterLogin.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbEnterLogin.TabIndex = 8;
+            this.pbEnterLogin.TabStop = false;
+            this.pbEnterLogin.Click += new System.EventHandler(this.pbEnterLogin_Click);
+            this.pbEnterLogin.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pbEnterLogin_MouseDown);
+            this.pbEnterLogin.MouseUp += new System.Windows.Forms.MouseEventHandler(this.pbEnterLogin_MouseUp);
             // 
             // label2
             // 
@@ -250,7 +252,7 @@ namespace Bookstore.Forms
             this.Controls.Add(this.pbIconEmail);
             this.Controls.Add(this.lblRegister);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.pictureBox5);
+            this.Controls.Add(this.pbEnterLogin);
             this.Controls.Add(this.cbLembrarSenha);
             this.Controls.Add(this.txtPassword);
             this.Controls.Add(this.txtEmail);
@@ -260,6 +262,7 @@ namespace Bookstore.Forms
             this.Controls.Add(this.pbIconUser);
             this.Controls.Add(this.pictureBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FmLogin";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Login";
@@ -267,7 +270,7 @@ namespace Bookstore.Forms
             ((System.ComponentModel.ISupportInitialize)(this.pbIconUser)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbEmail)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbPassword)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbEnterLogin)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbIconEmail)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbIconPassword)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbCloseLogin)).EndInit();

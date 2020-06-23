@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FmBooks));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.pbCloseFmBooks = new System.Windows.Forms.PictureBox();
             this.pnlButtosBooks = new System.Windows.Forms.Panel();
             this.pnlContainerFmAddOrUpdateBook = new System.Windows.Forms.Panel();
@@ -59,10 +59,10 @@
             this.pnlBooksGrid = new System.Windows.Forms.Panel();
             this.btnDeleteBook = new System.Windows.Forms.Button();
             this.btnUpdateData = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
             this.dgvBooks = new System.Windows.Forms.DataGridView();
             this.pnlSearchBook = new System.Windows.Forms.Panel();
             this.txtFilterData = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pbCloseFmBooks)).BeginInit();
             this.pnlButtosBooks.SuspendLayout();
             this.pnlContainerFmAddOrUpdateBook.SuspendLayout();
@@ -82,6 +82,7 @@
             this.pbCloseFmBooks.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pbCloseFmBooks.TabIndex = 1;
             this.pbCloseFmBooks.TabStop = false;
+            this.pbCloseFmBooks.Click += new System.EventHandler(this.pbCloseFmBooks_Click);
             // 
             // pnlButtosBooks
             // 
@@ -226,6 +227,7 @@
             this.txtAmountBook.Name = "txtAmountBook";
             this.txtAmountBook.Size = new System.Drawing.Size(264, 20);
             this.txtAmountBook.TabIndex = 30;
+            this.txtAmountBook.TextChanged += new System.EventHandler(this.txtAmountBook_TextChanged);
             this.txtAmountBook.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtAmountBook_KeyPress);
             // 
             // txteditoraBook
@@ -446,17 +448,6 @@
             this.btnUpdateData.UseVisualStyleBackColor = false;
             this.btnUpdateData.Click += new System.EventHandler(this.btnUpdateData_Click);
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(175, 10);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(145, 21);
-            this.label1.TabIndex = 4;
-            this.label1.Text = "Search book now";
-            // 
             // dgvBooks
             // 
             this.dgvBooks.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -467,24 +458,24 @@
             this.dgvBooks.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(144)))), ((int)(((byte)(12)))), ((int)(((byte)(63)))));
             this.dgvBooks.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvBooks.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(3)))), ((int)(((byte)(22)))));
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.WhiteSmoke;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.Salmon;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvBooks.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(3)))), ((int)(((byte)(22)))));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.WhiteSmoke;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.Salmon;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvBooks.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvBooks.ColumnHeadersHeight = 30;
             this.dgvBooks.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(144)))), ((int)(((byte)(12)))), ((int)(((byte)(63)))));
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(199)))), ((int)(((byte)(0)))), ((int)(((byte)(57)))));
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvBooks.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(144)))), ((int)(((byte)(12)))), ((int)(((byte)(63)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(199)))), ((int)(((byte)(0)))), ((int)(((byte)(57)))));
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvBooks.DefaultCellStyle = dataGridViewCellStyle2;
             this.dgvBooks.EnableHeadersVisualStyles = false;
             this.dgvBooks.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(199)))), ((int)(((byte)(0)))), ((int)(((byte)(57)))));
             this.dgvBooks.Location = new System.Drawing.Point(13, 135);
@@ -526,6 +517,17 @@
             this.txtFilterData.TextChanged += new System.EventHandler(this.txtFilterData_TextChanged);
             this.txtFilterData.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtFilterData_KeyPress);
             this.txtFilterData.Leave += new System.EventHandler(this.txtFilterData_Leave);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(175, 10);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(145, 21);
+            this.label1.TabIndex = 4;
+            this.label1.Text = "Search book now";
             // 
             // FmBooks
             // 

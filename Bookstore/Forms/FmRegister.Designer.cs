@@ -104,6 +104,7 @@ namespace Bookstore.Forms
             // 
             this.txtEmailRegister.BackColor = System.Drawing.Color.DarkGray;
             this.txtEmailRegister.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtEmailRegister.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtEmailRegister.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.txtEmailRegister.Location = new System.Drawing.Point(370, 161);
             this.txtEmailRegister.Multiline = true;
@@ -112,11 +113,14 @@ namespace Bookstore.Forms
             this.txtEmailRegister.TabIndex = 11;
             this.txtEmailRegister.Text = "Type here your e-mail address";
             this.txtEmailRegister.Click += new System.EventHandler(this.TxtEmailRegisterClick);
+            this.txtEmailRegister.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtEmailRegister_KeyPress);
+            this.txtEmailRegister.Leave += new System.EventHandler(this.txtEmailRegister_Leave);
             // 
             // txtNameRegister
             // 
             this.txtNameRegister.BackColor = System.Drawing.Color.DarkGray;
             this.txtNameRegister.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtNameRegister.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtNameRegister.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.txtNameRegister.Location = new System.Drawing.Point(370, 110);
             this.txtNameRegister.Multiline = true;
@@ -125,6 +129,8 @@ namespace Bookstore.Forms
             this.txtNameRegister.TabIndex = 10;
             this.txtNameRegister.Text = "TYPE HERE YOUR FULL NAME";
             this.txtNameRegister.Click += new System.EventHandler(this.TxtNameRegisterClick);
+            this.txtNameRegister.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNameRegister_KeyPress);
+            this.txtNameRegister.Leave += new System.EventHandler(this.txtNameRegister_Leave);
             // 
             // pbPasswordRegister
             // 
@@ -180,6 +186,7 @@ namespace Bookstore.Forms
             // 
             this.txtConfirmPassword.BackColor = System.Drawing.Color.DarkGray;
             this.txtConfirmPassword.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtConfirmPassword.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtConfirmPassword.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.txtConfirmPassword.Location = new System.Drawing.Point(370, 271);
             this.txtConfirmPassword.Multiline = true;
@@ -188,11 +195,14 @@ namespace Bookstore.Forms
             this.txtConfirmPassword.TabIndex = 15;
             this.txtConfirmPassword.Text = "Repeat your password";
             this.txtConfirmPassword.Click += new System.EventHandler(this.TxtConfirmPasswordClick);
+            this.txtConfirmPassword.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtConfirmPassword_KeyPress);
+            this.txtConfirmPassword.Leave += new System.EventHandler(this.txtConfirmPassword_Leave);
             // 
             // txtPasswordRegister
             // 
             this.txtPasswordRegister.BackColor = System.Drawing.Color.DarkGray;
             this.txtPasswordRegister.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtPasswordRegister.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtPasswordRegister.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.txtPasswordRegister.Location = new System.Drawing.Point(370, 220);
             this.txtPasswordRegister.Multiline = true;
@@ -201,6 +211,8 @@ namespace Bookstore.Forms
             this.txtPasswordRegister.TabIndex = 14;
             this.txtPasswordRegister.Text = "Type here your password";
             this.txtPasswordRegister.Click += new System.EventHandler(this.TxtPasswordRegisterClick);
+            this.txtPasswordRegister.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPasswordRegister_KeyPress);
+            this.txtPasswordRegister.Leave += new System.EventHandler(this.txtPasswordRegister_Leave);
             // 
             // pbRegisterNowRegoster
             // 
@@ -213,6 +225,7 @@ namespace Bookstore.Forms
             this.pbRegisterNowRegoster.TabIndex = 16;
             this.pbRegisterNowRegoster.TabStop = false;
             this.pbRegisterNowRegoster.Click += new System.EventHandler(this.PbRegisterNowRegosterClick);
+            this.pbRegisterNowRegoster.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pbRegisterNowRegoster_MouseDown);
             // 
             // pbCloseRegister
             // 
@@ -284,11 +297,12 @@ namespace Bookstore.Forms
             // 
             this.cbFunctionUser.BackColor = System.Drawing.Color.DarkGray;
             this.cbFunctionUser.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cbFunctionUser.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbFunctionUser.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.cbFunctionUser.FormattingEnabled = true;
             this.cbFunctionUser.Location = new System.Drawing.Point(370, 311);
             this.cbFunctionUser.Name = "cbFunctionUser";
-            this.cbFunctionUser.Size = new System.Drawing.Size(182, 21);
+            this.cbFunctionUser.Size = new System.Drawing.Size(182, 25);
             this.cbFunctionUser.TabIndex = 24;
             this.cbFunctionUser.Text = "Choose a function";
             this.cbFunctionUser.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.cbFunctionUser_KeyPress);

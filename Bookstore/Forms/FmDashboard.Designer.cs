@@ -38,22 +38,25 @@ namespace Bookstore.Forms
 		{
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FmDashboard));
             this.pnlVerticalMenu = new System.Windows.Forms.Panel();
+            this.btnNickUser = new System.Windows.Forms.Button();
+            this.pbShutDownDash = new System.Windows.Forms.PictureBox();
+            this.pnlBtnAbout = new System.Windows.Forms.Panel();
+            this.pnlBtnProductos = new System.Windows.Forms.Panel();
+            this.pnlBtnSale = new System.Windows.Forms.Panel();
+            this.btnAbout = new System.Windows.Forms.Button();
             this.btnProductos = new System.Windows.Forms.Button();
             this.btnSale = new System.Windows.Forms.Button();
             this.pbLogoDash = new System.Windows.Forms.PictureBox();
             this.pnlTop = new System.Windows.Forms.Panel();
+            this.lblTitleDashboard = new System.Windows.Forms.Label();
             this.pbMinimizeDash = new System.Windows.Forms.PictureBox();
             this.pbDropDownDash = new System.Windows.Forms.PictureBox();
             this.pbMaximizeWindowDash = new System.Windows.Forms.PictureBox();
             this.pbCloseWindowDash = new System.Windows.Forms.PictureBox();
             this.pbMenuDash = new System.Windows.Forms.PictureBox();
             this.pnlContainers = new System.Windows.Forms.Panel();
-            this.btnAbout = new System.Windows.Forms.Button();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.pbShutDownDash = new System.Windows.Forms.PictureBox();
             this.pnlVerticalMenu.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbShutDownDash)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbLogoDash)).BeginInit();
             this.pnlTop.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbMinimizeDash)).BeginInit();
@@ -61,16 +64,16 @@ namespace Bookstore.Forms
             ((System.ComponentModel.ISupportInitialize)(this.pbMaximizeWindowDash)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbCloseWindowDash)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbMenuDash)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbShutDownDash)).BeginInit();
             this.SuspendLayout();
             // 
             // pnlVerticalMenu
             // 
             this.pnlVerticalMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
+            this.pnlVerticalMenu.Controls.Add(this.btnNickUser);
             this.pnlVerticalMenu.Controls.Add(this.pbShutDownDash);
-            this.pnlVerticalMenu.Controls.Add(this.panel3);
-            this.pnlVerticalMenu.Controls.Add(this.panel2);
-            this.pnlVerticalMenu.Controls.Add(this.panel1);
+            this.pnlVerticalMenu.Controls.Add(this.pnlBtnAbout);
+            this.pnlVerticalMenu.Controls.Add(this.pnlBtnProductos);
+            this.pnlVerticalMenu.Controls.Add(this.pnlBtnSale);
             this.pnlVerticalMenu.Controls.Add(this.btnAbout);
             this.pnlVerticalMenu.Controls.Add(this.btnProductos);
             this.pnlVerticalMenu.Controls.Add(this.btnSale);
@@ -80,6 +83,76 @@ namespace Bookstore.Forms
             this.pnlVerticalMenu.Name = "pnlVerticalMenu";
             this.pnlVerticalMenu.Size = new System.Drawing.Size(250, 650);
             this.pnlVerticalMenu.TabIndex = 0;
+            // 
+            // btnNickUser
+            // 
+            this.btnNickUser.Cursor = System.Windows.Forms.Cursors.Arrow;
+            this.btnNickUser.FlatAppearance.BorderSize = 0;
+            this.btnNickUser.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnNickUser.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnNickUser.ForeColor = System.Drawing.Color.White;
+            this.btnNickUser.Image = ((System.Drawing.Image)(resources.GetObject("btnNickUser.Image")));
+            this.btnNickUser.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnNickUser.Location = new System.Drawing.Point(3, 556);
+            this.btnNickUser.Name = "btnNickUser";
+            this.btnNickUser.Size = new System.Drawing.Size(245, 40);
+            this.btnNickUser.TabIndex = 8;
+            this.btnNickUser.UseVisualStyleBackColor = true;
+            // 
+            // pbShutDownDash
+            // 
+            this.pbShutDownDash.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.pbShutDownDash.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pbShutDownDash.Image = ((System.Drawing.Image)(resources.GetObject("pbShutDownDash.Image")));
+            this.pbShutDownDash.Location = new System.Drawing.Point(6, 613);
+            this.pbShutDownDash.Name = "pbShutDownDash";
+            this.pbShutDownDash.Size = new System.Drawing.Size(30, 30);
+            this.pbShutDownDash.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbShutDownDash.TabIndex = 7;
+            this.pbShutDownDash.TabStop = false;
+            this.pbShutDownDash.Click += new System.EventHandler(this.pbShutDownDash_Click);
+            // 
+            // pnlBtnAbout
+            // 
+            this.pnlBtnAbout.BackColor = System.Drawing.Color.White;
+            this.pnlBtnAbout.Location = new System.Drawing.Point(0, 161);
+            this.pnlBtnAbout.Name = "pnlBtnAbout";
+            this.pnlBtnAbout.Size = new System.Drawing.Size(5, 40);
+            this.pnlBtnAbout.TabIndex = 6;
+            // 
+            // pnlBtnProductos
+            // 
+            this.pnlBtnProductos.BackColor = System.Drawing.Color.White;
+            this.pnlBtnProductos.Location = new System.Drawing.Point(0, 115);
+            this.pnlBtnProductos.Name = "pnlBtnProductos";
+            this.pnlBtnProductos.Size = new System.Drawing.Size(5, 40);
+            this.pnlBtnProductos.TabIndex = 5;
+            // 
+            // pnlBtnSale
+            // 
+            this.pnlBtnSale.BackColor = System.Drawing.Color.White;
+            this.pnlBtnSale.Location = new System.Drawing.Point(0, 69);
+            this.pnlBtnSale.Name = "pnlBtnSale";
+            this.pnlBtnSale.Size = new System.Drawing.Size(5, 40);
+            this.pnlBtnSale.TabIndex = 4;
+            // 
+            // btnAbout
+            // 
+            this.btnAbout.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnAbout.FlatAppearance.BorderSize = 0;
+            this.btnAbout.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
+            this.btnAbout.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAbout.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAbout.ForeColor = System.Drawing.Color.White;
+            this.btnAbout.Image = ((System.Drawing.Image)(resources.GetObject("btnAbout.Image")));
+            this.btnAbout.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnAbout.Location = new System.Drawing.Point(5, 161);
+            this.btnAbout.Name = "btnAbout";
+            this.btnAbout.Size = new System.Drawing.Size(245, 40);
+            this.btnAbout.TabIndex = 3;
+            this.btnAbout.Text = "About";
+            this.btnAbout.UseVisualStyleBackColor = true;
+            this.btnAbout.Click += new System.EventHandler(this.btnAbout_Click);
             // 
             // btnProductos
             // 
@@ -115,6 +188,7 @@ namespace Bookstore.Forms
             this.btnSale.TabIndex = 1;
             this.btnSale.Text = "Sale";
             this.btnSale.UseVisualStyleBackColor = true;
+            this.btnSale.Click += new System.EventHandler(this.btnSale_Click);
             // 
             // pbLogoDash
             // 
@@ -131,6 +205,7 @@ namespace Bookstore.Forms
             // pnlTop
             // 
             this.pnlTop.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.pnlTop.Controls.Add(this.lblTitleDashboard);
             this.pnlTop.Controls.Add(this.pbMinimizeDash);
             this.pnlTop.Controls.Add(this.pbDropDownDash);
             this.pnlTop.Controls.Add(this.pbMaximizeWindowDash);
@@ -142,6 +217,16 @@ namespace Bookstore.Forms
             this.pnlTop.Size = new System.Drawing.Size(1050, 50);
             this.pnlTop.TabIndex = 1;
             this.pnlTop.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pnlTop_MouseDown);
+            // 
+            // lblTitleDashboard
+            // 
+            this.lblTitleDashboard.AutoSize = true;
+            this.lblTitleDashboard.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTitleDashboard.Location = new System.Drawing.Point(497, 14);
+            this.lblTitleDashboard.Name = "lblTitleDashboard";
+            this.lblTitleDashboard.Size = new System.Drawing.Size(56, 28);
+            this.lblTitleDashboard.TabIndex = 5;
+            this.lblTitleDashboard.Text = "Title";
             // 
             // pbMinimizeDash
             // 
@@ -217,59 +302,6 @@ namespace Bookstore.Forms
             this.pnlContainers.Size = new System.Drawing.Size(1050, 600);
             this.pnlContainers.TabIndex = 2;
             // 
-            // btnAbout
-            // 
-            this.btnAbout.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnAbout.FlatAppearance.BorderSize = 0;
-            this.btnAbout.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
-            this.btnAbout.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAbout.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAbout.ForeColor = System.Drawing.Color.White;
-            this.btnAbout.Image = ((System.Drawing.Image)(resources.GetObject("btnAbout.Image")));
-            this.btnAbout.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAbout.Location = new System.Drawing.Point(5, 161);
-            this.btnAbout.Name = "btnAbout";
-            this.btnAbout.Size = new System.Drawing.Size(245, 40);
-            this.btnAbout.TabIndex = 3;
-            this.btnAbout.Text = "About";
-            this.btnAbout.UseVisualStyleBackColor = true;
-            // 
-            // panel1
-            // 
-            this.panel1.BackColor = System.Drawing.Color.White;
-            this.panel1.Location = new System.Drawing.Point(0, 69);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(5, 40);
-            this.panel1.TabIndex = 4;
-            // 
-            // panel2
-            // 
-            this.panel2.BackColor = System.Drawing.Color.White;
-            this.panel2.Location = new System.Drawing.Point(0, 115);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(5, 40);
-            this.panel2.TabIndex = 5;
-            // 
-            // panel3
-            // 
-            this.panel3.BackColor = System.Drawing.Color.White;
-            this.panel3.Location = new System.Drawing.Point(0, 161);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(5, 40);
-            this.panel3.TabIndex = 6;
-            // 
-            // pbShutDownDash
-            // 
-            this.pbShutDownDash.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.pbShutDownDash.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pbShutDownDash.Image = ((System.Drawing.Image)(resources.GetObject("pbShutDownDash.Image")));
-            this.pbShutDownDash.Location = new System.Drawing.Point(6, 613);
-            this.pbShutDownDash.Name = "pbShutDownDash";
-            this.pbShutDownDash.Size = new System.Drawing.Size(30, 30);
-            this.pbShutDownDash.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pbShutDownDash.TabIndex = 7;
-            this.pbShutDownDash.TabStop = false;
-            // 
             // FmDashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -284,14 +316,15 @@ namespace Bookstore.Forms
             this.Text = "FmDashboard";
             this.Load += new System.EventHandler(this.FmDashboard_Load);
             this.pnlVerticalMenu.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pbShutDownDash)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbLogoDash)).EndInit();
             this.pnlTop.ResumeLayout(false);
+            this.pnlTop.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbMinimizeDash)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbDropDownDash)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbMaximizeWindowDash)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbCloseWindowDash)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbMenuDash)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbShutDownDash)).EndInit();
             this.ResumeLayout(false);
 
 		}
@@ -309,8 +342,10 @@ namespace Bookstore.Forms
         private System.Windows.Forms.Button btnSale;
         private System.Windows.Forms.Button btnAbout;
         private System.Windows.Forms.PictureBox pbShutDownDash;
-        private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel pnlBtnAbout;
+        private System.Windows.Forms.Panel pnlBtnProductos;
+        private System.Windows.Forms.Panel pnlBtnSale;
+        private System.Windows.Forms.Button btnNickUser;
+        private System.Windows.Forms.Label lblTitleDashboard;
     }
 }

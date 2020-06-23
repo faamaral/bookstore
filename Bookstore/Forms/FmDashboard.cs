@@ -10,6 +10,9 @@ using System;
 using System.Drawing;
 using System.Windows.Forms;
 using System.Runtime.InteropServices;
+using System.Threading;
+using Bookstore.Utils;
+using System.IO;
 
 namespace Bookstore.Forms
 {
@@ -18,16 +21,19 @@ namespace Bookstore.Forms
 	/// </summary>
 	public partial class FmDashboard : Form
 	{
+		Thread th;
+		FmLogin fmLogin = new FmLogin();
 		public FmDashboard()
 		{
 			//
 			// The InitializeComponent() call is required for Windows Forms designer support.
 			//
 			InitializeComponent();
-			
+
 			//
 			// TODO: Add constructor code after the InitializeComponent() call.
 			//
+			
 		}
 
 		[DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
@@ -49,6 +55,7 @@ namespace Bookstore.Forms
 
 		private void pbCloseWindowDash_Click(object sender, EventArgs e)
 		{
+			File.Delete("userLogged.txt");
 			Application.Exit();
 		}
 
@@ -84,11 +91,95 @@ namespace Bookstore.Forms
 		private void pbLogoDash_Click(object sender, EventArgs e)
 		{
 			openFormInPainelContainer(new FmHomePage());
+			lblTitleDashboard.Text = "Home";
+			resetColors();
+		}
+
+		private string receiveUserInfo()
+		{
+			Stream inUser = null;
+			StreamReader reader = null;
+			string info = "";
+
+			try
+			{
+				if (File.Exists("userLogged.txt"))
+				{
+					inUser = File.Open("userLogged.txt", FileMode.Open);
+					reader = new StreamReader(inUser);
+					info = reader.ReadToEnd();					
+				}
+				return info;
+			}
+			catch (Exception ex)
+			{
+				throw ex;
+			}
+			finally
+			{
+
+				if (reader != null)
+				{
+					reader.Close();
+				}
+
+				if (inUser != null)
+				{
+					inUser.Close();
+				}
+
+				//File.Delete("userLogged.txt");
+			}
 		}
 
 		private void FmDashboard_Load(object sender, EventArgs e)
 		{
 			pbLogoDash_Click(null, e);
+			if (receiveUserInfo() != "")
+			{
+				btnNickUser.Text = receiveUserInfo();
+			}
+			lblTitleDashboard.Text = "Home";
+			resetColors();
+		}
+
+		private void resetColors()
+		{
+			pnlBtnSale.BackColor = Color.FromArgb(0, 122, 204);
+			pnlBtnProductos.BackColor = Color.FromArgb(0, 122, 204);
+			pnlBtnAbout.BackColor = Color.FromArgb(0, 122, 204);
+		}
+
+		private void btnSale_Click(object sender, EventArgs e)
+		{
+			openFormInPainelContainer(new FmSale());
+			lblTitleDashboard.Text = "Sale";
+			resetColors();
+			pnlBtnSale.BackColor = Color.White;
+		}
+
+		private void btnAbout_Click(object sender, EventArgs e)
+		{
+			openFormInPainelContainer(new FmAbout());
+			lblTitleDashboard.Text = "About";
+			resetColors();
+			pnlBtnAbout.BackColor = Color.White;
+		}
+
+		private void pbShutDownDash_Click(object sender, EventArgs e)
+		{
+			if (MessageBox.Show("Do you really want to leave?","Alert",MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+			{
+				File.Delete("userLogged.txt");
+				this.Close();
+				th = new Thread(ReturnLogin);
+				th.SetApartmentState(ApartmentState.STA);
+				th.Start();
+			}
+		}
+		private void ReturnLogin()
+		{
+			Application.Run(new FmLogin());
 		}
 
 		private void pnlTop_MouseDown(object sender, MouseEventArgs e)
@@ -97,7 +188,7 @@ namespace Bookstore.Forms
 			SendMessage(this.Handle,0x112, 0xf012, 0);
 		}
 
-		private void openFormInPainelContainer(object formChild)
+		public void openFormInPainelContainer(object formChild)
 		{
 			if (this.pnlContainers.Controls.Count > 0)
 			{
@@ -113,6 +204,9 @@ namespace Bookstore.Forms
 		private void btnProductos_Click(object sender, EventArgs e)
 		{
 			openFormInPainelContainer(new FmBooks());
+			lblTitleDashboard.Text = "Productos";
+			resetColors();
+			pnlBtnProductos.BackColor = Color.White;
 		}
 	}
 }
