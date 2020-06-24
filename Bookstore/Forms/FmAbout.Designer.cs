@@ -33,18 +33,18 @@
             this.lblDescription = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pnlContactsAbout = new System.Windows.Forms.Panel();
+            this.pbLinkGithub = new System.Windows.Forms.PictureBox();
+            this.pbLinkTwitter = new System.Windows.Forms.PictureBox();
+            this.pbLinkInstagram = new System.Windows.Forms.PictureBox();
             this.pbLinkFacebook = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.pbLinkInstagram = new System.Windows.Forms.PictureBox();
-            this.pbLinkTwitter = new System.Windows.Forms.PictureBox();
-            this.pbLinkGithub = new System.Windows.Forms.PictureBox();
             this.pnlInfoAbout.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.pnlContactsAbout.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pbLinkFacebook)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbLinkInstagram)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbLinkTwitter)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbLinkGithub)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbLinkTwitter)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbLinkInstagram)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbLinkFacebook)).BeginInit();
             this.SuspendLayout();
             // 
             // pnlInfoAbout
@@ -92,6 +92,48 @@
             this.pnlContactsAbout.Size = new System.Drawing.Size(1050, 209);
             this.pnlContactsAbout.TabIndex = 1;
             // 
+            // pbLinkGithub
+            // 
+            this.pbLinkGithub.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pbLinkGithub.Image = ((System.Drawing.Image)(resources.GetObject("pbLinkGithub.Image")));
+            this.pbLinkGithub.Location = new System.Drawing.Point(734, 83);
+            this.pbLinkGithub.Name = "pbLinkGithub";
+            this.pbLinkGithub.Size = new System.Drawing.Size(35, 35);
+            this.pbLinkGithub.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbLinkGithub.TabIndex = 4;
+            this.pbLinkGithub.TabStop = false;
+            this.pbLinkGithub.Click += new System.EventHandler(this.pbLinkGithub_Click);
+            this.pbLinkGithub.MouseLeave += new System.EventHandler(this.pbLinkGithub_MouseLeave);
+            this.pbLinkGithub.MouseHover += new System.EventHandler(this.pbLinkGithub_MouseHover);
+            // 
+            // pbLinkTwitter
+            // 
+            this.pbLinkTwitter.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pbLinkTwitter.Image = ((System.Drawing.Image)(resources.GetObject("pbLinkTwitter.Image")));
+            this.pbLinkTwitter.Location = new System.Drawing.Point(681, 83);
+            this.pbLinkTwitter.Name = "pbLinkTwitter";
+            this.pbLinkTwitter.Size = new System.Drawing.Size(35, 35);
+            this.pbLinkTwitter.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbLinkTwitter.TabIndex = 3;
+            this.pbLinkTwitter.TabStop = false;
+            this.pbLinkTwitter.Click += new System.EventHandler(this.pbLinkTwitter_Click);
+            this.pbLinkTwitter.MouseLeave += new System.EventHandler(this.pbLinkTwitter_MouseLeave);
+            this.pbLinkTwitter.MouseHover += new System.EventHandler(this.pbLinkTwitter_MouseHover);
+            // 
+            // pbLinkInstagram
+            // 
+            this.pbLinkInstagram.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pbLinkInstagram.Image = ((System.Drawing.Image)(resources.GetObject("pbLinkInstagram.Image")));
+            this.pbLinkInstagram.Location = new System.Drawing.Point(626, 83);
+            this.pbLinkInstagram.Name = "pbLinkInstagram";
+            this.pbLinkInstagram.Size = new System.Drawing.Size(35, 35);
+            this.pbLinkInstagram.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbLinkInstagram.TabIndex = 2;
+            this.pbLinkInstagram.TabStop = false;
+            this.pbLinkInstagram.Click += new System.EventHandler(this.pbLinkInstagram_Click);
+            this.pbLinkInstagram.MouseLeave += new System.EventHandler(this.pbLinkInstagram_MouseLeave);
+            this.pbLinkInstagram.MouseHover += new System.EventHandler(this.pbLinkInstagram_MouseHover);
+            // 
             // pbLinkFacebook
             // 
             this.pbLinkFacebook.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -116,52 +158,11 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "follow my social networks:";
             // 
-            // pbLinkInstagram
-            // 
-            this.pbLinkInstagram.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pbLinkInstagram.Image = ((System.Drawing.Image)(resources.GetObject("pbLinkInstagram.Image")));
-            this.pbLinkInstagram.Location = new System.Drawing.Point(626, 83);
-            this.pbLinkInstagram.Name = "pbLinkInstagram";
-            this.pbLinkInstagram.Size = new System.Drawing.Size(35, 35);
-            this.pbLinkInstagram.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pbLinkInstagram.TabIndex = 2;
-            this.pbLinkInstagram.TabStop = false;
-            this.pbLinkInstagram.Click += new System.EventHandler(this.pbLinkInstagram_Click);
-            this.pbLinkInstagram.MouseLeave += new System.EventHandler(this.pbLinkInstagram_MouseLeave);
-            this.pbLinkInstagram.MouseHover += new System.EventHandler(this.pbLinkInstagram_MouseHover);
-            // 
-            // pbLinkTwitter
-            // 
-            this.pbLinkTwitter.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pbLinkTwitter.Image = ((System.Drawing.Image)(resources.GetObject("pbLinkTwitter.Image")));
-            this.pbLinkTwitter.Location = new System.Drawing.Point(681, 83);
-            this.pbLinkTwitter.Name = "pbLinkTwitter";
-            this.pbLinkTwitter.Size = new System.Drawing.Size(35, 35);
-            this.pbLinkTwitter.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pbLinkTwitter.TabIndex = 3;
-            this.pbLinkTwitter.TabStop = false;
-            this.pbLinkTwitter.Click += new System.EventHandler(this.pbLinkTwitter_Click);
-            this.pbLinkTwitter.MouseLeave += new System.EventHandler(this.pbLinkTwitter_MouseLeave);
-            this.pbLinkTwitter.MouseHover += new System.EventHandler(this.pbLinkTwitter_MouseHover);
-            // 
-            // pbLinkGithub
-            // 
-            this.pbLinkGithub.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pbLinkGithub.Image = ((System.Drawing.Image)(resources.GetObject("pbLinkGithub.Image")));
-            this.pbLinkGithub.Location = new System.Drawing.Point(734, 83);
-            this.pbLinkGithub.Name = "pbLinkGithub";
-            this.pbLinkGithub.Size = new System.Drawing.Size(35, 35);
-            this.pbLinkGithub.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pbLinkGithub.TabIndex = 4;
-            this.pbLinkGithub.TabStop = false;
-            this.pbLinkGithub.Click += new System.EventHandler(this.pbLinkGithub_Click);
-            this.pbLinkGithub.MouseLeave += new System.EventHandler(this.pbLinkGithub_MouseLeave);
-            this.pbLinkGithub.MouseHover += new System.EventHandler(this.pbLinkGithub_MouseHover);
-            // 
             // FmAbout
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.DarkGray;
             this.ClientSize = new System.Drawing.Size(1050, 600);
             this.Controls.Add(this.pnlContactsAbout);
             this.Controls.Add(this.pnlInfoAbout);
@@ -173,10 +174,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.pnlContactsAbout.ResumeLayout(false);
             this.pnlContactsAbout.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pbLinkFacebook)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbLinkInstagram)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbLinkTwitter)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbLinkGithub)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbLinkTwitter)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbLinkInstagram)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbLinkFacebook)).EndInit();
             this.ResumeLayout(false);
 
         }

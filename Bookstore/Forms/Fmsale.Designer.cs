@@ -30,6 +30,10 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FmSale));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.cbApplyDiscount = new System.Windows.Forms.CheckBox();
+            this.pnlCalcDiscount = new System.Windows.Forms.Panel();
+            this.btnApplyDiscount = new System.Windows.Forms.Button();
+            this.txtDiscountValue = new System.Windows.Forms.TextBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.btnCancelBuying = new System.Windows.Forms.Button();
             this.btnFinishShop = new System.Windows.Forms.Button();
@@ -61,22 +65,20 @@
             this.mtxtSearchBookSale = new System.Windows.Forms.MaskedTextBox();
             this.btnSearchBookSale = new System.Windows.Forms.Button();
             this.pnlDgvSearchPro = new System.Windows.Forms.Panel();
-            this.pnlCalcDiscount = new System.Windows.Forms.Panel();
-            this.cbApplyDiscount = new System.Windows.Forms.CheckBox();
-            this.txtDiscountValue = new System.Windows.Forms.TextBox();
-            this.btnApplyDiscount = new System.Windows.Forms.Button();
+            this.label8 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
+            this.pnlCalcDiscount.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvShoppingCart)).BeginInit();
             this.pnlPartSeachProd.SuspendLayout();
             this.pnlQuantProd.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSearchProd)).BeginInit();
             this.panel4.SuspendLayout();
-            this.pnlCalcDiscount.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
             // 
+            this.panel1.BackColor = System.Drawing.Color.DarkGray;
             this.panel1.Controls.Add(this.cbApplyDiscount);
             this.panel1.Controls.Add(this.pnlCalcDiscount);
             this.panel1.Controls.Add(this.panel2);
@@ -87,6 +89,62 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(573, 600);
             this.panel1.TabIndex = 0;
+            // 
+            // cbApplyDiscount
+            // 
+            this.cbApplyDiscount.AutoSize = true;
+            this.cbApplyDiscount.Location = new System.Drawing.Point(238, 298);
+            this.cbApplyDiscount.Name = "cbApplyDiscount";
+            this.cbApplyDiscount.Size = new System.Drawing.Size(95, 17);
+            this.cbApplyDiscount.TabIndex = 4;
+            this.cbApplyDiscount.Text = "Apply discount";
+            this.cbApplyDiscount.UseVisualStyleBackColor = true;
+            this.cbApplyDiscount.CheckedChanged += new System.EventHandler(this.cbApplyDiscount_CheckedChanged);
+            this.cbApplyDiscount.Click += new System.EventHandler(this.cbApplyDiscount_Click);
+            // 
+            // pnlCalcDiscount
+            // 
+            this.pnlCalcDiscount.Controls.Add(this.label8);
+            this.pnlCalcDiscount.Controls.Add(this.btnApplyDiscount);
+            this.pnlCalcDiscount.Controls.Add(this.txtDiscountValue);
+            this.pnlCalcDiscount.Location = new System.Drawing.Point(25, 321);
+            this.pnlCalcDiscount.Name = "pnlCalcDiscount";
+            this.pnlCalcDiscount.Size = new System.Drawing.Size(521, 100);
+            this.pnlCalcDiscount.TabIndex = 3;
+            // 
+            // btnApplyDiscount
+            // 
+            this.btnApplyDiscount.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(147)))), ((int)(((byte)(55)))));
+            this.btnApplyDiscount.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnApplyDiscount.FlatAppearance.BorderSize = 0;
+            this.btnApplyDiscount.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Gray;
+            this.btnApplyDiscount.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnApplyDiscount.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnApplyDiscount.ForeColor = System.Drawing.Color.White;
+            this.btnApplyDiscount.Image = ((System.Drawing.Image)(resources.GetObject("btnApplyDiscount.Image")));
+            this.btnApplyDiscount.Location = new System.Drawing.Point(198, 46);
+            this.btnApplyDiscount.Name = "btnApplyDiscount";
+            this.btnApplyDiscount.Size = new System.Drawing.Size(124, 43);
+            this.btnApplyDiscount.TabIndex = 14;
+            this.btnApplyDiscount.Text = "Apply";
+            this.btnApplyDiscount.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnApplyDiscount.UseVisualStyleBackColor = false;
+            this.btnApplyDiscount.Click += new System.EventHandler(this.btnApplyDiscount_Click);
+            // 
+            // txtDiscountValue
+            // 
+            this.txtDiscountValue.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.txtDiscountValue.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtDiscountValue.Font = new System.Drawing.Font("Century Gothic", 18F);
+            this.txtDiscountValue.ForeColor = System.Drawing.Color.DarkRed;
+            this.txtDiscountValue.Location = new System.Drawing.Point(200, 5);
+            this.txtDiscountValue.MaxLength = 2;
+            this.txtDiscountValue.Name = "txtDiscountValue";
+            this.txtDiscountValue.Size = new System.Drawing.Size(121, 30);
+            this.txtDiscountValue.TabIndex = 13;
+            this.txtDiscountValue.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtDiscountValue.TextChanged += new System.EventHandler(this.txtDiscountValue_TextChanged);
+            this.txtDiscountValue.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtDiscountValue_KeyPress);
             // 
             // panel2
             // 
@@ -171,6 +229,9 @@
             this.dgvShopping_Mountaint});
             this.dgvShoppingCart.Location = new System.Drawing.Point(25, 46);
             this.dgvShoppingCart.Name = "dgvShoppingCart";
+            this.dgvShoppingCart.ReadOnly = true;
+            this.dgvShoppingCart.RowHeadersVisible = false;
+            this.dgvShoppingCart.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvShoppingCart.Size = new System.Drawing.Size(521, 202);
             this.dgvShoppingCart.TabIndex = 1;
             // 
@@ -178,39 +239,45 @@
             // 
             this.dgvShopping_idProd.HeaderText = "Id";
             this.dgvShopping_idProd.Name = "dgvShopping_idProd";
+            this.dgvShopping_idProd.ReadOnly = true;
             // 
             // dgvShopping_isbn
             // 
             this.dgvShopping_isbn.HeaderText = "ISBN";
             this.dgvShopping_isbn.Name = "dgvShopping_isbn";
+            this.dgvShopping_isbn.ReadOnly = true;
             // 
             // dgvShopping_nameProd
             // 
             this.dgvShopping_nameProd.HeaderText = "Product Name";
             this.dgvShopping_nameProd.Name = "dgvShopping_nameProd";
+            this.dgvShopping_nameProd.ReadOnly = true;
             // 
             // dgvShopping_amount
             // 
             this.dgvShopping_amount.HeaderText = "Amount";
             this.dgvShopping_amount.Name = "dgvShopping_amount";
+            this.dgvShopping_amount.ReadOnly = true;
             // 
             // dgvShopping_Mountaint
             // 
             this.dgvShopping_Mountaint.HeaderText = "Mountaint";
             this.dgvShopping_Mountaint.Name = "dgvShopping_Mountaint";
+            this.dgvShopping_Mountaint.ReadOnly = true;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(177, 9);
+            this.label1.Location = new System.Drawing.Point(207, 9);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(204, 22);
+            this.label1.Size = new System.Drawing.Size(140, 22);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Carrinho de compras";
+            this.label1.Text = "Shopping cart";
             // 
             // pnlPartSeachProd
             // 
+            this.pnlPartSeachProd.BackColor = System.Drawing.Color.DarkGray;
             this.pnlPartSeachProd.Controls.Add(this.pnlQuantProd);
             this.pnlPartSeachProd.Controls.Add(this.dgvSearchProd);
             this.pnlPartSeachProd.Controls.Add(this.panel4);
@@ -449,65 +516,21 @@
             this.pnlDgvSearchPro.Size = new System.Drawing.Size(428, 216);
             this.pnlDgvSearchPro.TabIndex = 3;
             // 
-            // pnlCalcDiscount
+            // label8
             // 
-            this.pnlCalcDiscount.Controls.Add(this.btnApplyDiscount);
-            this.pnlCalcDiscount.Controls.Add(this.txtDiscountValue);
-            this.pnlCalcDiscount.Location = new System.Drawing.Point(25, 321);
-            this.pnlCalcDiscount.Name = "pnlCalcDiscount";
-            this.pnlCalcDiscount.Size = new System.Drawing.Size(521, 100);
-            this.pnlCalcDiscount.TabIndex = 3;
-            // 
-            // cbApplyDiscount
-            // 
-            this.cbApplyDiscount.AutoSize = true;
-            this.cbApplyDiscount.Location = new System.Drawing.Point(238, 298);
-            this.cbApplyDiscount.Name = "cbApplyDiscount";
-            this.cbApplyDiscount.Size = new System.Drawing.Size(95, 17);
-            this.cbApplyDiscount.TabIndex = 4;
-            this.cbApplyDiscount.Text = "Apply discount";
-            this.cbApplyDiscount.UseVisualStyleBackColor = true;
-            this.cbApplyDiscount.CheckedChanged += new System.EventHandler(this.cbApplyDiscount_CheckedChanged);
-            this.cbApplyDiscount.Click += new System.EventHandler(this.cbApplyDiscount_Click);
-            // 
-            // txtDiscountValue
-            // 
-            this.txtDiscountValue.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.txtDiscountValue.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtDiscountValue.Font = new System.Drawing.Font("Century Gothic", 18F);
-            this.txtDiscountValue.ForeColor = System.Drawing.Color.DarkRed;
-            this.txtDiscountValue.Location = new System.Drawing.Point(200, 5);
-            this.txtDiscountValue.MaxLength = 2;
-            this.txtDiscountValue.Name = "txtDiscountValue";
-            this.txtDiscountValue.Size = new System.Drawing.Size(121, 30);
-            this.txtDiscountValue.TabIndex = 13;
-            this.txtDiscountValue.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.txtDiscountValue.TextChanged += new System.EventHandler(this.txtDiscountValue_TextChanged);
-            this.txtDiscountValue.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtDiscountValue_KeyPress);
-            // 
-            // btnApplyDiscount
-            // 
-            this.btnApplyDiscount.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(147)))), ((int)(((byte)(55)))));
-            this.btnApplyDiscount.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnApplyDiscount.FlatAppearance.BorderSize = 0;
-            this.btnApplyDiscount.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Gray;
-            this.btnApplyDiscount.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnApplyDiscount.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnApplyDiscount.ForeColor = System.Drawing.Color.White;
-            this.btnApplyDiscount.Image = ((System.Drawing.Image)(resources.GetObject("btnApplyDiscount.Image")));
-            this.btnApplyDiscount.Location = new System.Drawing.Point(198, 46);
-            this.btnApplyDiscount.Name = "btnApplyDiscount";
-            this.btnApplyDiscount.Size = new System.Drawing.Size(124, 43);
-            this.btnApplyDiscount.TabIndex = 14;
-            this.btnApplyDiscount.Text = "Apply";
-            this.btnApplyDiscount.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnApplyDiscount.UseVisualStyleBackColor = false;
-            this.btnApplyDiscount.Click += new System.EventHandler(this.btnApplyDiscount_Click);
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Location = new System.Drawing.Point(327, 11);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(25, 22);
+            this.label8.TabIndex = 5;
+            this.label8.Text = "%";
             // 
             // FmSale
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.DimGray;
             this.ClientSize = new System.Drawing.Size(1050, 600);
             this.Controls.Add(this.pnlPartSeachProd);
             this.Controls.Add(this.panel1);
@@ -517,6 +540,8 @@
             this.Text = "Sale";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            this.pnlCalcDiscount.ResumeLayout(false);
+            this.pnlCalcDiscount.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvShoppingCart)).EndInit();
@@ -526,8 +551,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvSearchProd)).EndInit();
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
-            this.pnlCalcDiscount.ResumeLayout(false);
-            this.pnlCalcDiscount.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -570,5 +593,6 @@
         private System.Windows.Forms.Panel pnlCalcDiscount;
         private System.Windows.Forms.Button btnApplyDiscount;
         private System.Windows.Forms.TextBox txtDiscountValue;
+        private System.Windows.Forms.Label label8;
     }
 }

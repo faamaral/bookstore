@@ -68,7 +68,7 @@ namespace Bookstore.Forms
             // 
             // pnlVerticalMenu
             // 
-            this.pnlVerticalMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
+            this.pnlVerticalMenu.BackColor = System.Drawing.Color.DarkRed;
             this.pnlVerticalMenu.Controls.Add(this.btnNickUser);
             this.pnlVerticalMenu.Controls.Add(this.pbShutDownDash);
             this.pnlVerticalMenu.Controls.Add(this.pnlBtnAbout);
@@ -311,6 +311,7 @@ namespace Bookstore.Forms
             this.Controls.Add(this.pnlTop);
             this.Controls.Add(this.pnlVerticalMenu);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FmDashboard";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FmDashboard";

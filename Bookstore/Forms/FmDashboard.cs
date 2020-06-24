@@ -145,9 +145,9 @@ namespace Bookstore.Forms
 
 		private void resetColors()
 		{
-			pnlBtnSale.BackColor = Color.FromArgb(0, 122, 204);
-			pnlBtnProductos.BackColor = Color.FromArgb(0, 122, 204);
-			pnlBtnAbout.BackColor = Color.FromArgb(0, 122, 204);
+			pnlBtnSale.BackColor = pnlVerticalMenu.BackColor;
+			pnlBtnProductos.BackColor = pnlVerticalMenu.BackColor;
+			pnlBtnAbout.BackColor = pnlVerticalMenu.BackColor;
 		}
 
 		private void btnSale_Click(object sender, EventArgs e)
